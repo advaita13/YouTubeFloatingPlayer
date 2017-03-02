@@ -1,0 +1,6 @@
+framework module Pods_YouTubeFloatingPlayer_Tests {
+  umbrella header "Pods-YouTubeFloatingPlayer_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

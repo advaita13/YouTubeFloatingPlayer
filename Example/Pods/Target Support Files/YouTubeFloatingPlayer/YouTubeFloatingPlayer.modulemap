@@ -1,0 +1,6 @@
+framework module YouTubeFloatingPlayer {
+  umbrella header "YouTubeFloatingPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

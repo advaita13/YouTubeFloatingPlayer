@@ -1,0 +1,19 @@
+PODS:
+  - youtube-ios-player-helper (0.1.6)
+  - YouTubeFloatingPlayer (0.1.0):
+    - youtube-ios-player-helper
+
+DEPENDENCIES:
+  - YouTubeFloatingPlayer (from `../`)
+
+EXTERNAL SOURCES:
+  YouTubeFloatingPlayer:
+    :path: ../
+
+SPEC CHECKSUMS:
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
+  YouTubeFloatingPlayer: 1607d919c7637d60e9081f7f6440789485df199f
+
+PODFILE CHECKSUM: 7176233e87b577564a9a25d8542d8183d50875f7
+
+COCOAPODS: 1.2.0

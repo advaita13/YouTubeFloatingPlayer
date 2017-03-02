@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'YouTubeFloatingPlayer_Example' do
+  pod 'YouTubeFloatingPlayer', :path => '../'
+
+  target 'YouTubeFloatingPlayer_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

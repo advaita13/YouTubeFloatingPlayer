@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		03B067AD4A4E08B24426D1F6 /* Pods_YouTubeFloatingPlayer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FED92761544388CC7E43A0B /* Pods_YouTubeFloatingPlayer_Tests.framework */; };
 		4F5D49D61A75DBD06429A21A /* Pods_YouTubeFloatingPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6429C84E49D31CD08A730FA /* Pods_YouTubeFloatingPlayer_Example.framework */; };
+		5119A1A81E69269B00E95666 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5119A1A71E69269B00E95666 /* VideoCell.swift */; };
+		51E619741E6928BF00263B67 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E619731E6928BF00263B67 /* UIImageView.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		0FED92761544388CC7E43A0B /* Pods_YouTubeFloatingPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouTubeFloatingPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E30EDD8E5AB1DBCBF0EE5D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5119A1A71E69269B00E95666 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		51E619731E6928BF00263B67 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageView.swift; path = Extensions/UIImageView.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* YouTubeFloatingPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouTubeFloatingPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		51E619721E6928A500263B67 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				51E619731E6928BF00263B67 /* UIImageView.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -102,8 +114,10 @@
 		607FACD21AFB9204008FA782 /* Example for YouTubeFloatingPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				51E619721E6928A500263B67 /* Extensions */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				5119A1A71E69269B00E95666 /* VideoCell.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -363,8 +377,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51E619741E6928BF00263B67 /* UIImageView.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				5119A1A81E69269B00E95666 /* VideoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -485,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -500,6 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3UM35L9R9A;
 				INFOPLIST_FILE = YouTubeFloatingPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -515,6 +532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3UM35L9R9A;
 				INFOPLIST_FILE = YouTubeFloatingPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

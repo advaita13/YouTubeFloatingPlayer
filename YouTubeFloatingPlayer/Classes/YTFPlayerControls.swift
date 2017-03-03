@@ -17,10 +17,8 @@ extension YTFViewController {
         videoView.playerState()
         
         if (videoView.playerState() == YTPlayerState.playing) {
-//            play.setImage(UIImage(named: "pause"), for: .normal)
             videoView.pauseVideo()
         } else {
-//            play.setImage(UIImage(named: "play"), for: .normal)
             videoView.playVideo()
         }
     }
@@ -35,30 +33,25 @@ extension YTFViewController {
     
     @IBAction func touchDragInsideSlider(sender: AnyObject) {
         dragginSlider = true
-//        videoView.pauseVideo()
+        resetHideTimer()
     }
-    
     
     @IBAction func valueChangedSlider(sender: AnyObject) {
         sliderValueChanged = true
+        videoView.pauseVideo()
+        videoView.seek(toSeconds: slider.value, allowSeekAhead: true )
     }
     
     @IBAction func touchUpInsideSlider(sender: AnyObject) {
+        videoView.playVideo()
         dragginSlider = false
-        videoView.seek(toSeconds: slider.value, allowSeekAhead: true)
-//        videoView.playVideo()
+        setHideTimer()
     }
     
     @IBAction func touchUpOutsideSlider(sender: AnyObject) {
+        videoView.playVideo()
         dragginSlider = false
-        videoView.seek(toSeconds: slider.value, allowSeekAhead: true)
-//        videoView.playVideo()
-    }
-    
-    @IBAction func touchDragOutsideSlider(sender: AnyObject) {
-        dragginSlider = false
-        videoView.seek(toSeconds: slider.value, allowSeekAhead: true)
-//        videoView.playVideo()
+        setHideTimer()
     }
 }
 
@@ -70,11 +63,6 @@ extension YTFViewController: YTPlayerViewDelegate {
     }
     
     func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
-        
-        /*if sliderValueChanged == true && state == .playing {
-            videoView.seek(toSeconds: slider.value, allowSeekAhead: true)
-            sliderValueChanged = false
-        }*/
         
         if state == .playing {
             play.setImage(pauseImage, for: .normal)

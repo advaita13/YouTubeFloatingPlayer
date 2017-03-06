@@ -9,8 +9,26 @@
 import UIKit
 
 public struct YTFPlayer {
+    
+    public static func initYTF(videoID: String) {
+        if (dragViewController == nil || isOpen()) {
+            
+            finishYTFView(animated: false)
+            
+            let bundle = Bundle(identifier: "org.cocoapods.YouTubeFloatingPlayer")
+            if let pathForAssetBundle = bundle?.path(forResource: "YouTubeFloatingPlayer", ofType: "bundle") {
+                if let resourceBundle = Bundle(path: pathForAssetBundle) {
+                    dragViewController = YTFViewController(nibName: "YTFViewController", bundle: resourceBundle)
+                }
+            }
+        }
+        dragViewController?.videoID = videoID
+    }
+    
     public static func initYTF(videoID: String, delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
-        if (dragViewController == nil) {
+        if (dragViewController == nil || isOpen()) {
+            
+            finishYTFView(animated: false)
             
             let bundle = Bundle(identifier: "org.cocoapods.YouTubeFloatingPlayer")
             if let pathForAssetBundle = bundle?.path(forResource: "YouTubeFloatingPlayer", ofType: "bundle") {

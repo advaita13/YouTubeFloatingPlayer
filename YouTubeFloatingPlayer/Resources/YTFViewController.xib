@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -14,8 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTFViewController" customModule="YouTubeFloatingPlayer" customModuleProvider="target">
             <connections>
                 <outlet property="backPlayerControlsView" destination="b1H-qK-LSs" id="Bay-TI-Dg9"/>
-                <outlet property="currentTime" destination="xST-Jd-HNU" id="CiS-tO-YE0"/>
-                <outlet property="entireTime" destination="0l8-MD-rzm" id="plT-Cg-aNs"/>
+                <outlet property="currentTimeLabel" destination="xST-Jd-HNU" id="fAs-RD-o0h"/>
+                <outlet property="entireTimeLabel" destination="0l8-MD-rzm" id="28f-S4-V2C"/>
                 <outlet property="fullscreen" destination="sXu-4o-OW4" id="m3A-xg-HlK"/>
                 <outlet property="minimizeButton" destination="cbJ-GH-Get" id="aP2-w8-HGy"/>
                 <outlet property="play" destination="tt5-IW-Rhy" id="gfw-RB-eA8"/>
@@ -123,10 +122,8 @@
                                     <rect key="frame" x="74" y="6" width="227" height="31"/>
                                     <color key="tintColor" red="0.85416666666666663" green="0.0083327276709560909" blue="0.01632961403612402" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
+                                        <action selector="touchCancelledSliderWithSender:" destination="-1" eventType="touchCancel" id="5Io-2X-mgJ"/>
                                         <action selector="touchDragInsideSliderWithSender:" destination="-1" eventType="touchDragInside" id="LQm-N6-3Of"/>
-                                        <action selector="touchDragOutsideSliderWithSender:" destination="-1" eventType="touchDragOutside" id="onR-lg-eu5"/>
-                                        <action selector="touchUpInsideSliderWithSender:" destination="-1" eventType="touchUpInside" id="jHI-XX-3Ln"/>
-                                        <action selector="touchUpOutsideSliderWithSender:" destination="-1" eventType="touchUpOutside" id="V9E-Qi-I1Y"/>
                                         <action selector="valueChangedSliderWithSender:" destination="-1" eventType="valueChanged" id="9Jm-du-JO0"/>
                                     </connections>
                                 </slider>

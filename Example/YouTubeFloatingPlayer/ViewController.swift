@@ -8,7 +8,6 @@
 
 import UIKit
 import YouTubeFloatingPlayer
-import AlamofireImage
 
 class ViewController: UITableViewController {
     

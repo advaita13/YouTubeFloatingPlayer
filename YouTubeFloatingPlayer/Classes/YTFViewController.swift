@@ -21,21 +21,22 @@ class YTFViewController: UIViewController {
     @IBOutlet weak var backPlayerControlsView: UIView!
     @IBOutlet weak var slider: CustomSlider!
     @IBOutlet weak var progress: CustomProgress!
-    @IBOutlet weak var entireTime: UILabel!
-    @IBOutlet weak var currentTime: UILabel!
+    @IBOutlet weak var entireTimeLabel: UILabel!
+    @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var progressIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var videoView: YTPlayerView!
     
     var videoID: String?
     var delegate: UITableViewDelegate?
     var dataSource: UITableViewDataSource?
-    var isOpen: Bool = false
     
+    var isOpen: Bool = false
     var isPlaying: Bool = false
     var isFullscreen: Bool = false
     var dragginSlider: Bool = false
     var sliderValueChanged: Bool = false
     var isMinimized: Bool = false
+    
     var hideTimer: Timer?
     
     var playerControlsFrame: CGRect?
@@ -70,6 +71,7 @@ class YTFViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
         initPlayerWithURLs()
         setupImageAssets()
         initViews()
@@ -78,10 +80,12 @@ class YTFViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         calculateFrames()
     }
     
     func initPlayerWithURLs() {
+        
         if (isMinimized) {
             expandViews()
         }
@@ -96,6 +100,7 @@ class YTFViewController: UIViewController {
     }
     
     func initViews() {
+        
         self.view.backgroundColor = UIColor.clear
         self.view.alpha = 0.0
         playerControlsView.alpha = 0.0
@@ -113,6 +118,7 @@ class YTFViewController: UIViewController {
     }
     
     func calculateFrames() {
+        
         self.initialFirstViewFrame = self.view.frame
         self.playerViewFrame = self.playerView.frame
         self.tableViewContainerFrame = self.tableViewContainer.frame
@@ -159,6 +165,7 @@ class YTFViewController: UIViewController {
     }
     
     func selectFirstRowOfTable() {
+        
         let rowToSelect:NSIndexPath = NSIndexPath(row: 0, section: 0)
         
         UIView.animate(withDuration: 0.5, animations: {
@@ -167,6 +174,7 @@ class YTFViewController: UIViewController {
     }
     
     func setupSlider(with duration: Float, currentTime: Float = 0.0) {
+        
         slider.minimumValue = 0.0
         slider.maximumValue = duration
         slider.value = currentTime

@@ -280,7 +280,7 @@ extension YTFViewController {
             
             let restrictY = initialFirstViewFrame!.size.height - playerView!.frame.size.height - 10
             
-            if (self.tableView.frame.origin.y < restrictY && self.tableView.frame.origin.y > 0) {
+            if (self.detailsView.frame.origin.y < restrictY && self.detailsView.frame.origin.y > 0) {
                 UIView.animate(withDuration: 0.09, delay: 0.0, options: .curveEaseInOut, animations: {
                     self.playerView.frame = self.playerViewMinimizedFrame!
                     self.view.frame = self.viewMinimizedFrame!
@@ -398,6 +398,7 @@ extension YTFViewController {
     }
     
     func expandViews() {
+        
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
             self.playerView.frame = self.playerViewFrame!
             self.view.frame = self.initialFirstViewFrame!
@@ -419,6 +420,7 @@ extension YTFViewController {
     }
     
     func finishViewAnimated(animated: Bool) {
+        
         if (animated) {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.view.frame = CGRect(x: 0.0, y: self.view!.frame.origin.y, width: self.view!.frame.size.width, height: self.view!.frame.size.height)
@@ -434,13 +436,16 @@ extension YTFViewController {
     
     func removeViews() {
         
+        resetHideTimer()
+        
         self.view.removeFromSuperview()
         self.playerView.removeFromSuperview()
-        self.tableView.removeFromSuperview()
+        self.detailsView.removeFromSuperview()
         self.tableViewContainer.removeFromSuperview()
         self.transparentView?.removeFromSuperview()
         self.playerControlsView.removeFromSuperview()
         self.backPlayerControlsView.removeFromSuperview()
+        
         dragViewController = nil
     }
     

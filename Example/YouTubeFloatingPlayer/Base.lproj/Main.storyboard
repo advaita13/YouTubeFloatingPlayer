@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="THA-Hl-XtR" id="OzV-KK-cMQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zQ2-Zt-ZUf">
@@ -56,6 +56,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="YouTube Floating Player" id="f97-lx-nyx"/>
+                    <connections>
+                        <outlet property="tableView" destination="ltA-qI-k6j" id="MDF-d5-rPY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XH2-sM-P4M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

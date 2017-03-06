@@ -14,7 +14,7 @@ class YTFViewController: UIViewController {
     @IBOutlet weak var play: UIButton!
     @IBOutlet weak var fullscreen: UIButton!
     @IBOutlet weak var playerView: UIView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var tableViewContainer: UIView!
     @IBOutlet weak var minimizeButton: YTFPopupCloseButton!
     @IBOutlet weak var playerControlsView: UIView!
@@ -27,6 +27,7 @@ class YTFViewController: UIViewController {
     @IBOutlet weak var videoView: YTPlayerView!
     
     var videoID: String?
+    var customView: UIView?
     var delegate: UITableViewDelegate?
     var dataSource: UITableViewDataSource?
     
@@ -75,8 +76,9 @@ class YTFViewController: UIViewController {
         initPlayerWithURLs()
         setupImageAssets()
         initViews()
-        super.viewDidLoad()
+        initDetailsView()
         
+        super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -111,10 +113,23 @@ class YTFViewController: UIViewController {
         playerView.addGestureRecognizer(gesture)
         self.playerTapGesture = UITapGestureRecognizer(target: self, action: #selector(YTFViewController.showPlayerControls))
         self.playerView.addGestureRecognizer(self.playerTapGesture!)
+    }
+    
+    func initDetailsView() {
         
-        tableView.delegate = delegate
-        tableView.dataSource = dataSource
-        tableView.rowHeight = CGFloat(76)
+        if delegate != nil && dataSource != nil {
+            
+            let tableView = UITableView()
+            tableView.delegate = delegate
+            tableView.dataSource = dataSource
+            
+            tableView.frame.size = detailsView.frame.size
+            detailsView.addSubview(tableView)
+        } else if let customView = customView {
+            
+            customView.frame.size = detailsView.frame.size
+            detailsView.addSubview(customView)
+        }
     }
     
     func calculateFrames() {
@@ -164,19 +179,10 @@ class YTFViewController: UIViewController {
         minimizeViews()
     }
     
-    func selectFirstRowOfTable() {
-        
-        let rowToSelect:NSIndexPath = NSIndexPath(row: 0, section: 0)
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            self.tableView.scrollToRow(at: rowToSelect as IndexPath, at: .top, animated: false)
-        })
-    }
-    
-    func setupSlider(with duration: Float, currentTime: Float = 0.0) {
+    func setupSlider(with duration: Double, currentTime: Float = 0.0) {
         
         slider.minimumValue = 0.0
-        slider.maximumValue = duration
+        slider.maximumValue = Float(duration)
         slider.value = currentTime
     }
 }

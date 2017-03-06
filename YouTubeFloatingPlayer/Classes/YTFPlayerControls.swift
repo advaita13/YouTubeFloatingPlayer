@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation.AVPlayer
 import youtube_ios_player_helper
 
 extension YTFViewController {
@@ -59,7 +58,7 @@ extension YTFViewController: YTPlayerViewDelegate {
     
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
         
-        setupSlider(with: Float(videoView.duration()))
+        setupSlider(with: videoView.duration())
         entireTimeLabel.text = timeFormatted(totalSeconds: Int(videoView.duration()))
         videoView.playVideo()
     }

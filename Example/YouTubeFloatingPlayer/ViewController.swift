@@ -44,7 +44,13 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        YTFPlayer.initYTF(videoID: videoIds[indexPath.row], delegate: self, dataSource: self)
+//        YTFPlayer.initYTF(videoID: videoIds[indexPath.row])
+        
+        let view = UIView()
+        view.backgroundColor = UIColor.orange
+        
+//        YTFPlayer.initYTF(with: view, videoID: videoIds[indexPath.row])
+        YTFPlayer.initYTF(with: tableView, videoID: videoIds[indexPath.row])
         YTFPlayer.showYTFView(viewController: self)
     }
 }

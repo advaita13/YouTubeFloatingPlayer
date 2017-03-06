@@ -1,22 +1,21 @@
 {
   "name": "YouTubeFloatingPlayer",
   "version": "0.1.0",
-  "summary": "A short description of YouTubeFloatingPlayer.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/adipandya@gmail.com/YouTubeFloatingPlayer",
+  "summary": "Swift based floating Youtube Player.",
+  "homepage": "https://github.com/advaita13/YouTubeFloatingPlayer",
   "license": {
-    "type": "MIT",
+    "type": "GNU GPLv3",
     "file": "LICENSE"
   },
   "authors": {
     "adipandya@gmail.com": "adipandya@gmail.com"
   },
   "source": {
-    "git": "https://github.com/adipandya@gmail.com/YouTubeFloatingPlayer.git",
+    "git": "https://github.com/advaita13/YouTubeFloatingPlayer.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "YouTubeFloatingPlayer/Classes/**/*",
   "resource_bundles": {

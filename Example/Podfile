@@ -1,3 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, ‘9.0’
 use_frameworks!
 
 target 'YouTubeFloatingPlayer_Example' do
@@ -5,7 +7,6 @@ target 'YouTubeFloatingPlayer_Example' do
 
   target 'YouTubeFloatingPlayer_Tests' do
     inherit! :search_paths
-
     
   end
 end

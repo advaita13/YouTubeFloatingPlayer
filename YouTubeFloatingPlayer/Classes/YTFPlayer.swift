@@ -9,8 +9,12 @@
 import UIKit
 
 public struct YTFPlayer {
-    public static func initYTF(videoID: String, delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
-        if (dragViewController == nil) {
+    
+    public static func initYTF(videoID: String) {
+        
+        if dragViewController == nil {
+            
+            finishYTFView(animated: false)
             
             let bundle = Bundle(identifier: "org.cocoapods.YouTubeFloatingPlayer")
             if let pathForAssetBundle = bundle?.path(forResource: "YouTubeFloatingPlayer", ofType: "bundle") {
@@ -18,13 +22,83 @@ public struct YTFPlayer {
                     dragViewController = YTFViewController(nibName: "YTFViewController", bundle: resourceBundle)
                 }
             }
+            dragViewController?.videoID = videoID
+        } else {
+            if dragViewController?.videoID != videoID {
+                dragViewController?.initPlayerWithURLs()
+                dragViewController?.videoID = videoID
+            } else {
+                dragViewController?.expandViews()
+            }
         }
-        dragViewController?.videoID = videoID
-        dragViewController?.delegate = delegate
-        dragViewController?.dataSource = dataSource
+    }
+    
+    public static func initYTF(with tableView: UITableView, videoID: String) {
+        if dragViewController == nil {
+            
+            finishYTFView(animated: false)
+            
+            let bundle = Bundle(identifier: "org.cocoapods.YouTubeFloatingPlayer")
+            if let pathForAssetBundle = bundle?.path(forResource: "YouTubeFloatingPlayer", ofType: "bundle") {
+                if let resourceBundle = Bundle(path: pathForAssetBundle) {
+                    dragViewController = YTFViewController(nibName: "YTFViewController", bundle: resourceBundle)
+                }
+            }
+            
+            dragViewController?.videoID = videoID
+            dragViewController?.delegate = tableView.delegate
+            dragViewController?.dataSource = tableView.dataSource
+        } else  {
+            if dragViewController?.videoID != videoID {
+                dragViewController?.initPlayerWithURLs()
+                dragViewController?.videoID = videoID
+            }
+            
+            dragViewController?.delegate = tableView.delegate
+            dragViewController?.dataSource = tableView.dataSource
+            dragViewController?.initDetailsView()
+            
+            if dragViewController?.videoID != videoID {
+                dragViewController?.initPlayerWithURLs()
+            } else {
+                dragViewController?.expandViews()
+            }
+        }
+    }
+    
+    public static func initYTF(with customView: UIView, videoID: String) {
+        if dragViewController == nil {
+            
+            finishYTFView(animated: false)
+            
+            let bundle = Bundle(identifier: "org.cocoapods.YouTubeFloatingPlayer")
+            if let pathForAssetBundle = bundle?.path(forResource: "YouTubeFloatingPlayer", ofType: "bundle") {
+                if let resourceBundle = Bundle(path: pathForAssetBundle) {
+                    dragViewController = YTFViewController(nibName: "YTFViewController", bundle: resourceBundle)
+                }
+            }
+            dragViewController?.videoID = videoID
+            dragViewController?.customView = customView
+        } else {
+            
+            if dragViewController?.videoID != videoID {
+                dragViewController?.initPlayerWithURLs()
+                dragViewController?.videoID = videoID
+            }
+            
+            dragViewController?.customView = customView
+            dragViewController?.initDetailsView()
+            
+            if dragViewController?.videoID != videoID {
+                dragViewController?.initPlayerWithURLs()
+            } else {
+                dragViewController?.expandViews()
+            }
+        }
     }
     
     public static func showYTFView(viewController: UIViewController) {
+        
         if dragViewController!.isOpen == false {
             dragViewController!.view.frame = CGRect(x: viewController.view.frame.size.width, y: viewController.view.frame.size.height, width: viewController.view.frame.size.width, height: viewController.view.frame.size.height)
             dragViewController!.view.alpha = 0
@@ -53,10 +127,10 @@ public struct YTFPlayer {
     }
     
     public static func finishYTFView(animated: Bool) {
+        
         if(dragViewController != nil) {
             dragViewController?.isOpen = false
             dragViewController?.finishViewAnimated(animated: animated)
-            dragViewController = nil
         }
     }
 }

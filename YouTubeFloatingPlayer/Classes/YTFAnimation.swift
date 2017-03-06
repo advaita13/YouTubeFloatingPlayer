@@ -38,6 +38,7 @@ extension YTFViewController {
     //MARK: Player Controls Animations
     
     func showPlayerControls() {
+        
         if (!isMinimized) {
             UIView.animate(withDuration: 0.6, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
                 self.backPlayerControlsView.alpha = 0.55
@@ -69,6 +70,7 @@ extension YTFViewController {
     //MARK: Video Animations
     
     func setPlayerToFullscreen() {
+        
         self.hidePlayerControls(dontAnimate: true)
         self.videoView.isHidden = true
         
@@ -104,6 +106,7 @@ extension YTFViewController {
     }
     
     func setPlayerToNormalScreen() {
+        
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
             self.playerView.transform = CGAffineTransform(rotationAngle: 0)
             
@@ -126,6 +129,7 @@ extension YTFViewController {
     }
     
     func panAction(recognizer: UIPanGestureRecognizer) {
+        
         if (!isFullscreen) {
             let yPlayerLocation = recognizer.location(in: self.view?.window).y
             
@@ -143,6 +147,7 @@ extension YTFViewController {
     }
     
     func onRecognizerStateBegan(yPlayerLocation: CGFloat, recognizer: UIPanGestureRecognizer) {
+        
         tableViewContainer.backgroundColor = UIColor.white
         hidePlayerControls(dontAnimate: true)
         panGestureDirection = UIPanGestureRecognizerDirection.Undefined
@@ -156,6 +161,7 @@ extension YTFViewController {
     }
     
     func onRecognizerStateChanged(yPlayerLocation: CGFloat, recognizer: UIPanGestureRecognizer) {
+        
         if (panGestureDirection == UIPanGestureRecognizerDirection.Down ||
             panGestureDirection == UIPanGestureRecognizerDirection.Up) {
             let trueOffset = yPlayerLocation - touchPositionStartY!
@@ -168,6 +174,7 @@ extension YTFViewController {
     }
     
     func onRecognizerStateEnded(yPlayerLocation: CGFloat, recognizer: UIPanGestureRecognizer) {
+        
         if (panGestureDirection == UIPanGestureRecognizerDirection.Down ||
             panGestureDirection == UIPanGestureRecognizerDirection.Up) {
             if (self.view.frame.origin.y < 0) {
@@ -187,6 +194,7 @@ extension YTFViewController {
             }
             
         } else if (panGestureDirection == UIPanGestureRecognizerDirection.Left) {
+            
             if (tableViewContainer.alpha <= 0) {
                 if ((self.view?.frame.origin.x)! < CGFloat(0)) {
                     removeViews()
@@ -199,6 +207,7 @@ extension YTFViewController {
             
         } else {
             if (tableViewContainer.alpha <= 0) {
+                
                 if ((self.view?.frame.origin.x)! > initialFirstViewFrame!.size.width - 50) {
                     removeViews()
                     
@@ -213,6 +222,7 @@ extension YTFViewController {
     }
     
     func detectPanDirection(velocity: CGPoint) {
+        
         minimizeButton.isHidden = true
         let isVerticalGesture = fabs(velocity.y) > fabs(velocity.x)
         
@@ -270,7 +280,7 @@ extension YTFViewController {
             
             let restrictY = initialFirstViewFrame!.size.height - playerView!.frame.size.height - 10
             
-            if (self.tableView.frame.origin.y < restrictY && self.tableView.frame.origin.y > 0) {
+            if (self.detailsView.frame.origin.y < restrictY && self.detailsView.frame.origin.y > 0) {
                 UIView.animate(withDuration: 0.09, delay: 0.0, options: .curveEaseInOut, animations: {
                     self.playerView.frame = self.playerViewMinimizedFrame!
                     self.view.frame = self.viewMinimizedFrame!
@@ -298,6 +308,7 @@ extension YTFViewController {
     }
     
     func adjustViewOnHorizontalPan(recognizer: UIPanGestureRecognizer) {
+        
         let x = self.view.frame.origin.x
         
         if (panGestureDirection == UIPanGestureRecognizerDirection.Left ||
@@ -320,6 +331,7 @@ extension YTFViewController {
     }
     
     func detectHorizontalPanRecognizerViewAlpha(x: CGFloat, velocity: CGPoint, recognizer: UIPanGestureRecognizer) -> CGFloat {
+        
         let percentage = x / self.initialFirstViewFrame!.size.width
         
         if (panGestureDirection == UIPanGestureRecognizerDirection.Left) {
@@ -335,6 +347,7 @@ extension YTFViewController {
     }
     
     func animateViewToRightOrLeft(recognizer: UIPanGestureRecognizer) {
+        
         UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
             self.view.frame = self.viewMinimizedFrame!
             self.playerView!.frame = self.playerViewFrame!
@@ -385,6 +398,7 @@ extension YTFViewController {
     }
     
     func expandViews() {
+        
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
             self.playerView.frame = self.playerViewFrame!
             self.view.frame = self.initialFirstViewFrame!
@@ -406,6 +420,7 @@ extension YTFViewController {
     }
     
     func finishViewAnimated(animated: Bool) {
+        
         if (animated) {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.view.frame = CGRect(x: 0.0, y: self.view!.frame.origin.y, width: self.view!.frame.size.width, height: self.view!.frame.size.height)
@@ -420,13 +435,18 @@ extension YTFViewController {
     }
     
     func removeViews() {
+        
+        resetHideTimer()
+        
         self.view.removeFromSuperview()
         self.playerView.removeFromSuperview()
-        self.tableView.removeFromSuperview()
+        self.detailsView.removeFromSuperview()
         self.tableViewContainer.removeFromSuperview()
         self.transparentView?.removeFromSuperview()
         self.playerControlsView.removeFromSuperview()
         self.backPlayerControlsView.removeFromSuperview()
+        
+        dragViewController = nil
     }
     
 }

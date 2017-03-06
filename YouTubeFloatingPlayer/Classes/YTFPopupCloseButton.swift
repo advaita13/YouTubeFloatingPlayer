@@ -9,9 +9,11 @@
 import UIKit
 
 class YTFPopupCloseButton: UIButton {
+    
     var effectView: UIVisualEffectView
     
     override init(frame: CGRect) {
+        
         effectView = UIVisualEffectView.init(effect: UIBlurEffect(style: .extraLight))
         effectView.isUserInteractionEnabled = false
         super.init(frame: frame)
@@ -20,6 +22,7 @@ class YTFPopupCloseButton: UIButton {
     }
     
     required init?(coder aDecoder: NSCoder) {
+        
         effectView = UIVisualEffectView.init(effect: UIBlurEffect(style: .extraLight))
         effectView.isUserInteractionEnabled = false
         super.init(coder: aDecoder)
@@ -27,6 +30,7 @@ class YTFPopupCloseButton: UIButton {
     }
     
     func initViews() {
+        
         self.addSubview(effectView)
         let highlightEffectView: UIVisualEffectView = UIVisualEffectView.init(effect: UIVibrancyEffect(blurEffect: effectView.effect as! UIBlurEffect))
         highlightEffectView.autoresizingMask = [UIViewAutoresizing.flexibleHeight, UIViewAutoresizing.flexibleWidth]
@@ -51,6 +55,7 @@ class YTFPopupCloseButton: UIButton {
     }
     
     override func layoutSubviews() {
+        
         super.layoutSubviews()
         
         self.sendSubview(toBack: effectView)
@@ -73,6 +78,7 @@ class YTFPopupCloseButton: UIButton {
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
+        
         var superSize: CGSize = super.sizeThatFits(size)
         superSize.width = superSize.width + 14
         superSize.height = superSize.height + 2

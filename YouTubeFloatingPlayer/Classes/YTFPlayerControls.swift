@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation.AVPlayer
 import youtube_ios_player_helper
 
 extension YTFViewController {
@@ -24,6 +23,7 @@ extension YTFViewController {
     }
     
     @IBAction func fullScreenTouched(sender: AnyObject) {
+        
         if (!isFullscreen) {
             setPlayerToFullscreen()
         } else {
@@ -32,33 +32,34 @@ extension YTFViewController {
     }
     
     @IBAction func touchDragInsideSlider(sender: AnyObject) {
+        
         dragginSlider = true
         resetHideTimer()
     }
     
     @IBAction func valueChangedSlider(sender: AnyObject) {
-        sliderValueChanged = true
-        videoView.pauseVideo()
-        videoView.seek(toSeconds: slider.value, allowSeekAhead: true )
+        
+        currentTimeLabel.text = timeFormatted(totalSeconds: Int(slider.value))
+        videoView.seek(toSeconds: slider.value, allowSeekAhead: true)
     }
     
-    @IBAction func touchUpInsideSlider(sender: AnyObject) {
-        videoView.playVideo()
+    @IBAction func touchCancelledSlider(sender: AnyObject) {
         dragginSlider = false
-        setHideTimer()
     }
     
-    @IBAction func touchUpOutsideSlider(sender: AnyObject) {
-        videoView.playVideo()
-        dragginSlider = false
-        setHideTimer()
+    func timeFormatted(totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
     }
 }
 
 extension YTFViewController: YTPlayerViewDelegate {
     
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
-        setupSlider(with: Float(videoView.duration()))
+        
+        setupSlider(with: videoView.duration())
+        entireTimeLabel.text = timeFormatted(totalSeconds: Int(videoView.duration()))
         videoView.playVideo()
     }
     
@@ -74,10 +75,12 @@ extension YTFViewController: YTPlayerViewDelegate {
     }
     
     func playerView(_ playerView: YTPlayerView, didPlayTime playTime: Float) {
+        
         let currentTime = Int(playTime)
         
         if (!dragginSlider && (Int(slider.value) != currentTime)) { // Change every second
             slider.value = Float(currentTime)
+            currentTimeLabel.text = timeFormatted(totalSeconds: currentTime)
         }
     }
 }

@@ -18,6 +18,23 @@ enum UIPanGestureRecognizerDirection {
 
 extension YTFViewController {
     
+    //MARK: Utility Functions
+    
+    public func setHideTimer() {
+        
+        hideTimer?.invalidate()
+        hideTimer = nil
+        hideTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(YTFViewController.hidePlayerControls(dontAnimate:)), userInfo: 1.0, repeats: false)
+    }
+    
+    public func resetHideTimer() {
+        
+        if hideTimer != nil {
+            hideTimer?.invalidate()
+            hideTimer = nil
+        }
+    }
+    
     //MARK: Player Controls Animations
     
     func showPlayerControls() {
@@ -28,13 +45,12 @@ extension YTFViewController {
                 self.minimizeButton.alpha = 1.0
                 
                 }, completion: nil)
-            hideTimer?.invalidate()
-            hideTimer = nil
-            hideTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(YTFViewController.hidePlayerControls(dontAnimate:)), userInfo: 1.0, repeats: false)
+            setHideTimer()
         }
     }
     
     public func hidePlayerControls(dontAnimate: Bool) {
+        
         if (dontAnimate) {
             self.backPlayerControlsView.alpha = 0.0
             self.playerControlsView.alpha = 0.0

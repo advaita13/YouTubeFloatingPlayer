@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -164,6 +165,7 @@
                             </connections>
                         </button>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="xsU-9P-ZzS" firstAttribute="leading" secondItem="GX1-CJ-qY0" secondAttribute="leading" id="2WG-n0-gyf"/>
                         <constraint firstItem="7E7-qJ-KNO" firstAttribute="leading" secondItem="GX1-CJ-qY0" secondAttribute="leading" id="37P-ma-3EE"/>

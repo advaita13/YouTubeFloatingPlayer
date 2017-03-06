@@ -8,8 +8,12 @@
 
 import UIKit
 import YouTubeFloatingPlayer
+import AlamofireImage
 
 class ViewController: UITableViewController {
+    
+    let videoIds = ["9_hAGoth6BI", "GkJQ7JziOrc", "pnkS9tlJSf0", "DGt1yBxBw9k", "tL7GJpU9M6Y"]
+    let videoTitles = ["Video 1", "Video 2", "Video 3", "Video 4", "Video 5"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +25,7 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return videoIds.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -29,7 +33,11 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell") {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell") as? VideoCell {
+            let link = "http://img.youtube.com/vi/\(videoIds[indexPath.row])/0.jpg"
+            cell.setup(with: link)
+            
             return cell
         }
         return UITableViewCell()
@@ -37,7 +45,7 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        YTFPlayer.initYTF(videoID: "ROEIKn8OsGU", delegate: self, dataSource: self)
+        YTFPlayer.initYTF(videoID: videoIds[indexPath.row], delegate: self, dataSource: self)
         YTFPlayer.showYTFView(viewController: self)
     }
 }

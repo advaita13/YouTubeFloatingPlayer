@@ -125,8 +125,6 @@ class YTFViewController: UIViewController {
             view.removeFromSuperview()
         }
         
-        subviewForDetailsView?.tag = 1000
-        
         if let _ = delegate, let _ = dataSource, let tableCellNibName = tableCellNibName, let tableCellReuseIdentifier = tableCellReuseIdentifier {
             
             let tableView = UITableView()
@@ -175,7 +173,6 @@ class YTFViewController: UIViewController {
         self.restrictOffset = Float(self.initialFirstViewFrame!.size.width) - 200
         self.restrictTrueOffset = Float(self.initialFirstViewFrame!.size.height) - 180
         self.restictYaxis = Float(self.initialFirstViewFrame!.size.height - playerView.frame.size.height)
-        
     }
     
     func setupImageAssets() {

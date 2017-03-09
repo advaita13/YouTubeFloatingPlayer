@@ -11,7 +11,7 @@ import YouTubeFloatingPlayer
 
 class ViewController: UITableViewController {
     
-    let videoIds = ["9_hAGoth6BI", "GkJQ7JziOrc", "pnkS9tlJSf0"]
+    let videoIds = ["f0NdOE5GTgo", "2q906bSLEkw", "xQ_IQS3VKjA"]
     let videoTitles = ["Blank Details View", "Custom Details View", "TableView"]
     
     override func viewDidLoad() {

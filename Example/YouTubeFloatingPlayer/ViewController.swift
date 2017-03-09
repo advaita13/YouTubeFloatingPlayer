@@ -11,12 +11,14 @@ import YouTubeFloatingPlayer
 
 class ViewController: UITableViewController {
     
-    let videoIds = ["9_hAGoth6BI", "GkJQ7JziOrc", "pnkS9tlJSf0", "DGt1yBxBw9k", "tL7GJpU9M6Y"]
-    let videoTitles = ["Video 1", "Video 2", "Video 3", "Video 4", "Video 5"]
+    let videoIds = ["9_hAGoth6BI", "GkJQ7JziOrc", "pnkS9tlJSf0"]
+    let videoTitles = ["Blank Details View", "Custom Details View", "TableView"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tableView.register(UINib(nibName: "VideoCell", bundle: Bundle.main), forCellReuseIdentifier: "videoCell")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,7 +37,7 @@ class ViewController: UITableViewController {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell") as? VideoCell {
             let link = "http://img.youtube.com/vi/\(videoIds[indexPath.row])/0.jpg"
-            cell.setup(with: link)
+            cell.setup(with: link, title: videoTitles[indexPath.row])
             
             return cell
         }
@@ -44,13 +46,19 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        YTFPlayer.initYTF(videoID: videoIds[indexPath.row])
+        switch indexPath.row {
+        case 0:
+            YTFPlayer.initYTF(with: UIView(), videoID: videoIds[indexPath.row])
+        case 1:
+            let view = UIView()
+            view.backgroundColor = UIColor.orange
+            YTFPlayer.initYTF(with: view, videoID: videoIds[indexPath.row])
+        case 2:
+            YTFPlayer.initYTF(with: tableView, tableCellNibName: "VideoCell", tableCellReuseIdentifier: "videoCell", videoID: videoIds[indexPath.row])
+        default:
+            YTFPlayer.initYTF(with: UIView(), videoID: videoIds[indexPath.row])
+        }
         
-        let view = UIView()
-        view.backgroundColor = UIColor.orange
-        
-//        YTFPlayer.initYTF(with: view, videoID: videoIds[indexPath.row])
-        YTFPlayer.initYTF(with: tableView, videoID: videoIds[indexPath.row])
         YTFPlayer.showYTFView(viewController: self)
     }
 }

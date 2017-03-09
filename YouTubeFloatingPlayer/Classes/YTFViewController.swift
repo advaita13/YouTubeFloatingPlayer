@@ -30,6 +30,8 @@ class YTFViewController: UIViewController {
     var customView: UIView?
     var delegate: UITableViewDelegate?
     var dataSource: UITableViewDataSource?
+    var tableCellNibName: String?
+    var tableCellReuseIdentifier: String?
     
     var isOpen: Bool = false
     var isPlaying: Bool = false
@@ -62,6 +64,8 @@ class YTFViewController: UIViewController {
     var fullscreenImage: UIImage?
     var unfullscreenImage: UIImage?
     var minimizeImage: UIImage?
+    
+    var subviewForDetailsView: UIView?
     
     enum UIPanGestureRecognizerDirection {
         case Undefined
@@ -117,18 +121,33 @@ class YTFViewController: UIViewController {
     
     func initDetailsView() {
         
-        if delegate != nil && dataSource != nil {
+        if let view = subviewForDetailsView {
+            view.removeFromSuperview()
+        }
+        
+        subviewForDetailsView?.tag = 1000
+        
+        if let _ = delegate, let _ = dataSource, let tableCellNibName = tableCellNibName, let tableCellReuseIdentifier = tableCellReuseIdentifier {
             
             let tableView = UITableView()
             tableView.delegate = delegate
             tableView.dataSource = dataSource
             
+            tableView.register(UINib(nibName: tableCellNibName, bundle: Bundle.main), forCellReuseIdentifier: tableCellReuseIdentifier)
+            
             tableView.frame.size = detailsView.frame.size
-            detailsView.addSubview(tableView)
-        } else if let customView = customView {
+            subviewForDetailsView = tableView
+        }
+        
+        if let customView = customView {
             
             customView.frame.size = detailsView.frame.size
-            detailsView.addSubview(customView)
+            subviewForDetailsView = customView
+        }
+        
+        if let subview = subviewForDetailsView {
+            detailsView.addSubview(subview)
+            detailsView.bringSubview(toFront: subview)
         }
     }
     

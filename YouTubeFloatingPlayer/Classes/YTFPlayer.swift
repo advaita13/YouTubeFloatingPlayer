@@ -10,30 +10,7 @@ import UIKit
 
 public struct YTFPlayer {
     
-    public static func initYTF(videoID: String) {
-        
-        if dragViewController == nil {
-            
-            finishYTFView(animated: false)
-            
-            let bundle = Bundle(identifier: "org.cocoapods.YouTubeFloatingPlayer")
-            if let pathForAssetBundle = bundle?.path(forResource: "YouTubeFloatingPlayer", ofType: "bundle") {
-                if let resourceBundle = Bundle(path: pathForAssetBundle) {
-                    dragViewController = YTFViewController(nibName: "YTFViewController", bundle: resourceBundle)
-                }
-            }
-            dragViewController?.videoID = videoID
-        } else {
-            if dragViewController?.videoID != videoID {
-                dragViewController?.initPlayerWithURLs()
-                dragViewController?.videoID = videoID
-            } else {
-                dragViewController?.expandViews()
-            }
-        }
-    }
-    
-    public static func initYTF(with tableView: UITableView, videoID: String) {
+    public static func initYTF(with tableView: UITableView, tableCellNibName: String, tableCellReuseIdentifier: String, videoID: String) {
         if dragViewController == nil {
             
             finishYTFView(animated: false)
@@ -48,14 +25,19 @@ public struct YTFPlayer {
             dragViewController?.videoID = videoID
             dragViewController?.delegate = tableView.delegate
             dragViewController?.dataSource = tableView.dataSource
+            dragViewController?.tableCellNibName = tableCellNibName
+            dragViewController?.tableCellReuseIdentifier = tableCellReuseIdentifier
         } else  {
             if dragViewController?.videoID != videoID {
                 dragViewController?.initPlayerWithURLs()
                 dragViewController?.videoID = videoID
             }
             
+            dragViewController?.customView = nil
             dragViewController?.delegate = tableView.delegate
             dragViewController?.dataSource = tableView.dataSource
+            dragViewController?.tableCellNibName = tableCellNibName
+            dragViewController?.tableCellReuseIdentifier = tableCellReuseIdentifier
             dragViewController?.initDetailsView()
             
             if dragViewController?.videoID != videoID {
@@ -77,6 +59,7 @@ public struct YTFPlayer {
                     dragViewController = YTFViewController(nibName: "YTFViewController", bundle: resourceBundle)
                 }
             }
+            
             dragViewController?.videoID = videoID
             dragViewController?.customView = customView
         } else {
@@ -86,6 +69,7 @@ public struct YTFPlayer {
                 dragViewController?.videoID = videoID
             }
             
+            dragViewController?.delegate = nil
             dragViewController?.customView = customView
             dragViewController?.initDetailsView()
             

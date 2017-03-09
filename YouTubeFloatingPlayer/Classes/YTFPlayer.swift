@@ -29,8 +29,8 @@ public struct YTFPlayer {
             dragViewController?.tableCellReuseIdentifier = tableCellReuseIdentifier
         } else  {
             if dragViewController?.videoID != videoID {
-                dragViewController?.initPlayerWithURLs()
                 dragViewController?.videoID = videoID
+                dragViewController?.initPlayerWithURLs()
             }
             
             dragViewController?.customView = nil
@@ -65,8 +65,8 @@ public struct YTFPlayer {
         } else {
             
             if dragViewController?.videoID != videoID {
-                dragViewController?.initPlayerWithURLs()
                 dragViewController?.videoID = videoID
+                dragViewController?.initPlayerWithURLs()
             }
             
             dragViewController?.delegate = nil
@@ -74,6 +74,7 @@ public struct YTFPlayer {
             dragViewController?.initDetailsView()
             
             if dragViewController?.videoID != videoID {
+                dragViewController?.videoID = videoID
                 dragViewController?.initPlayerWithURLs()
             } else {
                 dragViewController?.expandViews()

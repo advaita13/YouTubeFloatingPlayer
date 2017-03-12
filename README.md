@@ -41,7 +41,7 @@ $ gem install cocoapods
 To integrate YouTubeFloatingPlayer into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-source 'https://github.com/advaita13/YouTubeFloatingPlayerPodSpecs'
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 

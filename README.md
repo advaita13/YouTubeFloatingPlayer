@@ -2,7 +2,6 @@
 
 A Swift-based video player inspired by YouTube. Based on [SwiftYouTubeFloatingPlayer](https://github.com/hanappaula/SwiftYouTubeFloatingPlayer).
 
-[![CI Status](http://img.shields.io/travis/adipandya@gmail.com/YouTubeFloatingPlayer.svg?style=flat)](https://travis-ci.org/adipandya@gmail.com/YouTubeFloatingPlayer)
 [![Version](https://img.shields.io/cocoapods/v/YouTubeFloatingPlayer.svg?style=flat)](http://cocoapods.org/pods/YouTubeFloatingPlayer)
 [![License](https://img.shields.io/cocoapods/l/YouTubeFloatingPlayer.svg?style=flat)](http://cocoapods.org/pods/YouTubeFloatingPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/YouTubeFloatingPlayer.svg?style=flat)](http://cocoapods.org/pods/YouTubeFloatingPlayer)
@@ -42,6 +41,7 @@ To integrate YouTubeFloatingPlayer into your Xcode project using CocoaPods, spec
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '9.0'
 use_frameworks!
 

@@ -11,10 +11,8 @@ import UIKit
 public struct YTFPlayer {
     
     public static func initYTF(with tableView: UITableView, tableCellNibName: String, tableCellReuseIdentifier: String, videoID: String) {
+        
         if dragViewController == nil {
-            
-            finishYTFView(animated: false)
-            
             let bundle = Bundle(identifier: "org.cocoapods.YouTubeFloatingPlayer")
             if let pathForAssetBundle = bundle?.path(forResource: "YouTubeFloatingPlayer", ofType: "bundle") {
                 if let resourceBundle = Bundle(path: pathForAssetBundle) {
@@ -30,7 +28,7 @@ public struct YTFPlayer {
         } else  {
             if dragViewController?.videoID != videoID {
                 dragViewController?.videoID = videoID
-                dragViewController?.initPlayerWithURLs()
+                dragViewController?.cuePlayerVideo()
             }
             
             dragViewController?.customView = nil
@@ -40,19 +38,13 @@ public struct YTFPlayer {
             dragViewController?.tableCellReuseIdentifier = tableCellReuseIdentifier
             dragViewController?.initDetailsView()
             
-            if dragViewController?.videoID != videoID {
-                dragViewController?.initPlayerWithURLs()
-            } else {
-                dragViewController?.expandViews()
-            }
+            dragViewController?.expandViews()
         }
     }
     
     public static func initYTF(with customView: UIView, videoID: String) {
+        
         if dragViewController == nil {
-            
-            finishYTFView(animated: false)
-            
             let bundle = Bundle(identifier: "org.cocoapods.YouTubeFloatingPlayer")
             if let pathForAssetBundle = bundle?.path(forResource: "YouTubeFloatingPlayer", ofType: "bundle") {
                 if let resourceBundle = Bundle(path: pathForAssetBundle) {
@@ -63,22 +55,16 @@ public struct YTFPlayer {
             dragViewController?.videoID = videoID
             dragViewController?.customView = customView
         } else {
-            
             if dragViewController?.videoID != videoID {
                 dragViewController?.videoID = videoID
-                dragViewController?.initPlayerWithURLs()
+                dragViewController?.cuePlayerVideo()
             }
             
             dragViewController?.delegate = nil
             dragViewController?.customView = customView
             dragViewController?.initDetailsView()
             
-            if dragViewController?.videoID != videoID {
-                dragViewController?.videoID = videoID
-                dragViewController?.initPlayerWithURLs()
-            } else {
-                dragViewController?.expandViews()
-            }
+            dragViewController?.expandViews()
         }
     }
     

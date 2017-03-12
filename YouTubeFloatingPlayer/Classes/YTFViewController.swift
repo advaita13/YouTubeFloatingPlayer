@@ -36,7 +36,6 @@ class YTFViewController: UIViewController {
     var isOpen: Bool = false
     var isPlaying: Bool = false
     var isFullscreen: Bool = false
-    var dragginSlider: Bool = false
     var sliderValueChanged: Bool = false
     var isMinimized: Bool = false
     
@@ -138,7 +137,6 @@ class YTFViewController: UIViewController {
         }
         
         if let customView = customView {
-            
             customView.frame.size = detailsView.frame.size
             subviewForDetailsView = customView
         }
@@ -187,7 +185,13 @@ class YTFViewController: UIViewController {
                 minimizeImage = UIImage(named: "NowPlayingCollapseChevronMask", in: assetBundle, compatibleWith: nil)
             }
         }
+    }
+    
+    func cuePlayerVideo() {
         
+        if let videoID = videoID {
+            videoView.cueVideo(byId: videoID, startSeconds: 0, suggestedQuality: .auto)
+        }
     }
     
     @IBAction func minimizeButtonTouched(sender: AnyObject) {

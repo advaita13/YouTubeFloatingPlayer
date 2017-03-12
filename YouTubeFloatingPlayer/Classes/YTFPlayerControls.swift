@@ -32,8 +32,7 @@ extension YTFViewController {
     }
     
     @IBAction func touchDragInsideSlider(sender: AnyObject) {
-        
-        dragginSlider = true
+
         resetHideTimer()
     }
     
@@ -44,7 +43,7 @@ extension YTFViewController {
     }
     
     @IBAction func touchCancelledSlider(sender: AnyObject) {
-        dragginSlider = false
+        
     }
     
     func timeFormatted(totalSeconds: Int) -> String {
@@ -65,10 +64,27 @@ extension YTFViewController: YTPlayerViewDelegate {
     
     func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
         
-        if state == .playing {
+        print("STATE", state.rawValue)
+        
+        switch state {
+        case .playing:
             play.setImage(pauseImage, for: .normal)
             isPlaying = true
-        } else {
+            currentTimeLabel.text = timeFormatted(totalSeconds: Int(videoView.currentTime()))
+            entireTimeLabel.text = timeFormatted(totalSeconds: Int(videoView.duration()))
+        case .paused:
+            play.setImage(playImage, for: .normal)
+            isPlaying = false
+        case .queued:
+            play.setImage(playImage, for: .normal)
+            isPlaying = false
+            currentTimeLabel.text = timeFormatted(totalSeconds: 0)
+            slider.value = 0
+            videoView.playVideo()
+        case .buffering:
+            play.setImage(pauseImage, for: .normal)
+            isPlaying = true
+        default:
             play.setImage(playImage, for: .normal)
             isPlaying = false
         }
@@ -78,7 +94,7 @@ extension YTFViewController: YTPlayerViewDelegate {
         
         let currentTime = Int(playTime)
         
-        if (!dragginSlider && (Int(slider.value) != currentTime)) { // Change every second
+        if (Int(slider.value) != currentTime) { // Change every second
             slider.value = Float(currentTime)
             currentTimeLabel.text = timeFormatted(totalSeconds: currentTime)
         }

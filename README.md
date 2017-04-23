@@ -15,7 +15,7 @@ A Swift-based video player inspired by YouTube. Based on [SwiftYouTubeFloatingPl
 
 Currently YTFPlayer is only supported on applications supporting only portrait orientations. To implement the following code must be implemented in the AppDelegate :
 
-```ruby
+```swift
 func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
     return UIInterfaceOrientationMask.Portrait
 }
@@ -39,7 +39,7 @@ $ gem install cocoapods
 
 To integrate YouTubeFloatingPlayer into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
-```ruby
+```swift
 source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '9.0'
@@ -58,28 +58,40 @@ $ pod install
 
 ## Usage
 
-Use `YTFPlayer.initYTF()` method to initialise Player with desired properties.
-Once initialised, use `YTFPlayer.showYTFView()` method with its parameter set to the desired ViewController.
+Import the library:
 
-```ruby
+```swift
 import YouTubeFloatingPlayer
+```
 
+Use `YTFPlayer.initYTF()` method to initialise Player with desired properties.
+
+```swift
 let videoID = "f0NdOE5GTgo"
+```
 
+```swift
 // Initiates Player with an empty details view
 YTFPlayer.initYTF(with: UIView(), videoID: videoID)
-YTFPlayer.showYTFView(viewController: self)
+```
 
+```swift
 // Initiates Player with a tableView with other content
 YTFPlayer.initYTF(with: tableView, tableCellNibName: "VideoCell", tableCellReuseIdentifier: "videoCell", videoID: videoID)
-YTFPlayer.showYTFView(viewController: self)
+```
 
+Once initialised, use `YTFPlayer.showYTFView()` method with its parameter set to the desired ViewController.
+
+```swift
+YTFPlayer.showYTFView(viewController: self)
+```
+
+Finally, use the `finishYTFView()` method to remove the Player from the view.
+```swift
 // Remove Player
 finishYTFView(animated: true)
 
 ```
-
-Finally, use the `finishYTFView()` method to remove the Player.
 
 
 ## Author

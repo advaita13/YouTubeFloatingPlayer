@@ -79,7 +79,6 @@ class YTFViewController: UIViewController {
         initPlayerWithURLs()
         setupImageAssets()
         initViews()
-        initDetailsView()
         
         super.viewDidLoad()
     }
@@ -87,6 +86,7 @@ class YTFViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         calculateFrames()
+        initDetailsView()
     }
     
     func initPlayerWithURLs() {
@@ -120,6 +120,8 @@ class YTFViewController: UIViewController {
     
     func initDetailsView() {
         
+        self.view.layoutIfNeeded()
+        
         if let view = subviewForDetailsView {
             view.removeFromSuperview()
         }
@@ -148,6 +150,8 @@ class YTFViewController: UIViewController {
     }
     
     func calculateFrames() {
+        
+        self.view.layoutIfNeeded()
         
         self.initialFirstViewFrame = self.view.frame
         self.playerViewFrame = self.playerView.frame

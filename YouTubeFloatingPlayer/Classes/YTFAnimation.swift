@@ -76,7 +76,7 @@ extension YTFViewController {
         
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
             self.minimizeButton.isHidden = true
-            self.playerView.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+            self.playerView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
             
             self.playerView.frame = CGRect(x: self.initialFirstViewFrame!.origin.x, y: self.initialFirstViewFrame!.origin.x, width: self.initialFirstViewFrame!.size.width, height: self.initialFirstViewFrame!.size.height)
             

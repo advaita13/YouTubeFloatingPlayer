@@ -1,0 +1,5 @@
+Exclude Project files and external libraries from language stats
+
+Example/YouTubeFloatingPlayer.xcodeproj linguist-vendored=true
+Example/YouTubeFloatingPlayer.xcworkspace linguist-vendored=true
+Example/Pods/* linguist-vendored=true

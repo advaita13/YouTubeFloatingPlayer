@@ -7,30 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		018D8A7BFDF6FD112638CC02CAA5A19D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8674D1E7C885582EB7D21E40091DF2 /* Foundation.framework */; };
 		02BEAD9A7C9AF1FD35BE7CE2A9C3F071 /* Pods-YouTubeFloatingPlayer_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B8FEFE26136F4D7B1550BB5F6EE7B /* Pods-YouTubeFloatingPlayer_Tests-dummy.m */; };
-		3C4868CFE4218EFB6114904D83D2AA7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365EEE7FF60E0C976009BDAF8E7EDEBF /* Foundation.framework */; };
+		0B3C864344941DBEB9002BAFB4A8E237 /* YTFPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A73831E2721D01723679CAC94B59F5 /* YTFPlayer.swift */; };
+		0CA44456EC79D59D9D5F0A3909FB3D21 /* YTFPlayerControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276984691234CCC8F1788942406ACACC /* YTFPlayerControls.swift */; };
 		4A82486A4E29D95F1814F86C131F3774 /* Pods-YouTubeFloatingPlayer_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA88FE0467872DAC0C3C9E415638036 /* Pods-YouTubeFloatingPlayer_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		513B629A1E6D0F2100D1A071 /* YTFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513B62981E6D011A00D1A071 /* YTFViewController.xib */; };
-		513B629B1E6D0F2500D1A071 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513B62971E6D011A00D1A071 /* Media.xcassets */; };
 		5DB8D302FE629F7D6101313E6E91804B /* Pods-YouTubeFloatingPlayer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF4FC6357097E035FE5E096BA916ABF /* Pods-YouTubeFloatingPlayer_Example-dummy.m */; };
-		6891825E186879D66CA5FBAF3620EB8B /* YTFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2F07833D623E5F533B09DCFB3472D8 /* YTFViewController.swift */; };
-		6C86B3F203A0FB2541C1260DAACB6B00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365EEE7FF60E0C976009BDAF8E7EDEBF /* Foundation.framework */; };
+		66917C2801058F934F78C0430E31B376 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8674D1E7C885582EB7D21E40091DF2 /* Foundation.framework */; };
 		75236DF18396AAFBE7E2ADACE3374803 /* youtube-ios-player-helper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D4799393EAD678EAE1DA6486B3965A0F /* youtube-ios-player-helper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		765AF75698FA2F05486E850124B79E73 /* YTFPopupCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E91AD24C729708745727398F3226 /* YTFPopupCloseButton.swift */; };
 		76A502BB3939340A0E9FDDF2454F03A7 /* YouTubeFloatingPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59B393ED2B0F758A765326DED0EC1F34 /* YouTubeFloatingPlayer.bundle */; };
-		79636E301E5C78B6667F1B6452B4B0C2 /* YTFPopupCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADAE670E24962AEF9968A2B9B7CA65 /* YTFPopupCloseButton.swift */; };
-		7E3A2786DAFEEDBA60E3BE38555AC2A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365EEE7FF60E0C976009BDAF8E7EDEBF /* Foundation.framework */; };
 		7EDD0C64A7870DFBE3108E0EC08B0651 /* youtube_ios_player_helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A6DB52CCBA3162B9A0DB227E552733 /* youtube_ios_player_helper.framework */; };
-		848751937766135F767AA2374F759B72 /* YTFPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22CA2EF8BBB9B42DF2A1151DCFBC68C /* YTFPlayer.swift */; };
-		8B93EA4CB247B2A5CFD632DE7C0D1B64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365EEE7FF60E0C976009BDAF8E7EDEBF /* Foundation.framework */; };
+		81A953184D85843C42CE491E7691479D /* YouTubeFloatingPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66EECADC73A9B87F332D1D1534B248 /* YouTubeFloatingPlayer-dummy.m */; };
+		8B345482BC1A53CBB58BF87FE7FD8ABA /* CustomProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73EA4852163DA5D4F88C42AD2DFD8E9 /* CustomProgressSlider.swift */; };
 		8C418502F4A083C8AFD8EDDF5BE16486 /* YTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = A972B15E9D285B9B1A36315DF29B4E77 /* YTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A317E7FF97C4DA20FA3ED3C8B4C21DB1 /* YouTubeFloatingPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1A472DF246B6006C709BB5904D7AB35 /* YouTubeFloatingPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B626BE8869E795C3A24951D50402F27D /* YTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C67C4CD74F2342E1499F6AC23536B /* YTFAnimation.swift */; };
+		A317E7FF97C4DA20FA3ED3C8B4C21DB1 /* YouTubeFloatingPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB4AB2399427FEA375442EC133413F7 /* YouTubeFloatingPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCDCED1DAC4A5AC7AB662D63C3841E8F /* Pods-YouTubeFloatingPlayer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A9AB4CF62A5D09901C666DEB5E90731B /* Pods-YouTubeFloatingPlayer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C48A18614265A1F5A9310B74631050AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8674D1E7C885582EB7D21E40091DF2 /* Foundation.framework */; };
+		CA5E6806A080E0D0FB8052355EE5F2BC /* YTFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA87C0FA1082FA0A13DAB7B167ABEA82 /* YTFViewController.xib */; };
 		CF7A285EC11001AA1763FC464DFB9276 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DEDEC20D350B168BF7B7FFDF4EB1E3 /* YTPlayerView.m */; };
-		D1AF15B1EF845F035AB2E417E5FBC62E /* YTFPlayerControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC3F73A72DFC9FAEDCF4792338C482 /* YTFPlayerControls.swift */; };
+		D3156D424AC26FFA9E80629F71563D66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8674D1E7C885582EB7D21E40091DF2 /* Foundation.framework */; };
 		D8C6EEA5415498F9039576E740A6A7CD /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 79376D247D489773D7E24EAC9B159283 /* Assets.bundle */; };
-		E3690DA5E51173A856BBC8B4166F0ADF /* CustomProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C45DAB35BB89952B3EA4CE34C7A6D4 /* CustomProgressSlider.swift */; };
-		E94A236D8DD90CC6B7DB20F178332EE2 /* YouTubeFloatingPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1363A5EB3BFA3C75145511DFDD90698E /* YouTubeFloatingPlayer-dummy.m */; };
+		D91646ED3AF6E6892805F8F5A5FDA118 /* YTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB63781DAF5285C5A7946F2B6193329 /* YTFAnimation.swift */; };
+		DF1A961664FB49E081F77448D84A3504 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD698F433C4B80E9C3DDC5983E6105B /* Media.xcassets */; };
+		F22E8A4A13117F0C5EE644F5D607A67E /* YTFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD787CEDE9BD3AF9F9D1CD31D50FBCC5 /* YTFViewController.swift */; };
 		FEB6EDCA8E3A58CDCFE0758C1765F347 /* youtube-ios-player-helper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A26821F8DC21FE3436AFC4BCB09D61 /* youtube-ios-player-helper-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -66,58 +66,58 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1206237CA6B68F0A020899A0D93BD89B /* ResourceBundle-YouTubeFloatingPlayer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-YouTubeFloatingPlayer-Info.plist"; sourceTree = "<group>"; };
-		12ADAE670E24962AEF9968A2B9B7CA65 /* YTFPopupCloseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YTFPopupCloseButton.swift; sourceTree = "<group>"; };
-		1363A5EB3BFA3C75145511DFDD90698E /* YouTubeFloatingPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YouTubeFloatingPlayer-dummy.m"; sourceTree = "<group>"; };
+		03A73831E2721D01723679CAC94B59F5 /* YTFPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YTFPlayer.swift; path = Source/YouTubeFloatingPlayer/Classes/YTFPlayer.swift; sourceTree = "<group>"; };
 		14E447CB0238E7867D53D545814A3E3C /* Pods-YouTubeFloatingPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YouTubeFloatingPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		2285E91AD24C729708745727398F3226 /* YTFPopupCloseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YTFPopupCloseButton.swift; path = Source/YouTubeFloatingPlayer/Classes/YTFPopupCloseButton.swift; sourceTree = "<group>"; };
 		2356C10A180E8BEBB7E4D6ABB65080DD /* Pods-YouTubeFloatingPlayer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YouTubeFloatingPlayer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		25DBB2CF94940459170F766594B185F6 /* YouTubeFloatingPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YouTubeFloatingPlayer.xcconfig; sourceTree = "<group>"; };
+		276984691234CCC8F1788942406ACACC /* YTFPlayerControls.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YTFPlayerControls.swift; path = Source/YouTubeFloatingPlayer/Classes/YTFPlayerControls.swift; sourceTree = "<group>"; };
 		29DEDEC20D350B168BF7B7FFDF4EB1E3 /* YTPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YTPlayerView.m; path = Classes/YTPlayerView.m; sourceTree = "<group>"; };
 		2DA83007D08E972B4760771926602870 /* Pods-YouTubeFloatingPlayer_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YouTubeFloatingPlayer_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		2E7DBE7ABA1A7ADC35E6668EF202685E /* Pods-YouTubeFloatingPlayer_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YouTubeFloatingPlayer_Tests-resources.sh"; sourceTree = "<group>"; };
-		365EEE7FF60E0C976009BDAF8E7EDEBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3CC0ECE42394D3CDFA5B39CE5FA3196A /* YouTubeFloatingPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YouTubeFloatingPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3ECC3F73A72DFC9FAEDCF4792338C482 /* YTFPlayerControls.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YTFPlayerControls.swift; sourceTree = "<group>"; };
-		42AA8FB8F3CE016D660F72473C7C2547 /* Pods-YouTubeFloatingPlayer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-YouTubeFloatingPlayer_Example.modulemap"; sourceTree = "<group>"; };
-		45F374A5B821596B2B480CAB35148CDB /* Pods_YouTubeFloatingPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouTubeFloatingPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		465259D997709999BE9A25260399018A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		494DBFB18C232FE025AF0EF5A4FC2000 /* youtube-ios-player-helper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "youtube-ios-player-helper.modulemap"; sourceTree = "<group>"; };
+		3CC0ECE42394D3CDFA5B39CE5FA3196A /* YouTubeFloatingPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YouTubeFloatingPlayer.framework; path = YouTubeFloatingPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42AA8FB8F3CE016D660F72473C7C2547 /* Pods-YouTubeFloatingPlayer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-YouTubeFloatingPlayer_Example.modulemap"; sourceTree = "<group>"; };
+		45F374A5B821596B2B480CAB35148CDB /* Pods_YouTubeFloatingPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YouTubeFloatingPlayer_Example.framework; path = "Pods-YouTubeFloatingPlayer_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		494DBFB18C232FE025AF0EF5A4FC2000 /* youtube-ios-player-helper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "youtube-ios-player-helper.modulemap"; sourceTree = "<group>"; };
 		4B0B8FEFE26136F4D7B1550BB5F6EE7B /* Pods-YouTubeFloatingPlayer_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YouTubeFloatingPlayer_Tests-dummy.m"; sourceTree = "<group>"; };
-		513B62971E6D011A00D1A071 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Resources/Media.xcassets; sourceTree = "<group>"; };
-		513B62981E6D011A00D1A071 /* YTFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YTFViewController.xib; path = Resources/YTFViewController.xib; sourceTree = "<group>"; };
-		59B393ED2B0F758A765326DED0EC1F34 /* YouTubeFloatingPlayer.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YouTubeFloatingPlayer.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		59B393ED2B0F758A765326DED0EC1F34 /* YouTubeFloatingPlayer.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = YouTubeFloatingPlayer.bundle; path = YouTubeFloatingPlayer.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7B57724CE1795EDA46E6FDFC9DFBB1 /* Pods-YouTubeFloatingPlayer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YouTubeFloatingPlayer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DC64C59DFD32FD28C7C27B2181FA5D2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E6F955251D4EA7F061492B9D1C06B93 /* youtube-ios-player-helper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-prefix.pch"; sourceTree = "<group>"; };
 		60A6DB52CCBA3162B9A0DB227E552733 /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = youtube_ios_player_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79376D247D489773D7E24EAC9B159283 /* Assets.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Assets.bundle; path = "youtube-ios-player-helper/Assets.bundle"; sourceTree = "<group>"; };
-		7A2F07833D623E5F533B09DCFB3472D8 /* YTFViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YTFViewController.swift; sourceTree = "<group>"; };
 		7BF4FC6357097E035FE5E096BA916ABF /* Pods-YouTubeFloatingPlayer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YouTubeFloatingPlayer_Example-dummy.m"; sourceTree = "<group>"; };
 		833911B0F7BE6C2D9066CC2C321CEEE4 /* Pods-YouTubeFloatingPlayer_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YouTubeFloatingPlayer_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8D8674D1E7C885582EB7D21E40091DF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		8DDD744B745914FD91C5A8E868DC0B14 /* Pods-YouTubeFloatingPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YouTubeFloatingPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
-		8EEB258619DB981FE6E84739468A5FE3 /* Pods-YouTubeFloatingPlayer_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-YouTubeFloatingPlayer_Tests.modulemap"; sourceTree = "<group>"; };
+		8EEB258619DB981FE6E84739468A5FE3 /* Pods-YouTubeFloatingPlayer_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-YouTubeFloatingPlayer_Tests.modulemap"; sourceTree = "<group>"; };
 		9014499E8CA0123397E3FE8E47A2ADF8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		942A9844665CEA58B44B0AC540A138F0 /* Pods-YouTubeFloatingPlayer_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YouTubeFloatingPlayer_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		997B909F7B0F02020B91AFF904BCD193 /* YouTubeFloatingPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YouTubeFloatingPlayer-prefix.pch"; sourceTree = "<group>"; };
 		A7EC547EDE57104D8822189323406DBA /* youtube-ios-player-helper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.xcconfig"; sourceTree = "<group>"; };
 		A972B15E9D285B9B1A36315DF29B4E77 /* YTPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = Classes/YTPlayerView.h; sourceTree = "<group>"; };
 		A9AB4CF62A5D09901C666DEB5E90731B /* Pods-YouTubeFloatingPlayer_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YouTubeFloatingPlayer_Example-umbrella.h"; sourceTree = "<group>"; };
+		AD787CEDE9BD3AF9F9D1CD31D50FBCC5 /* YTFViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YTFViewController.swift; path = Source/YouTubeFloatingPlayer/Classes/YTFViewController.swift; sourceTree = "<group>"; };
+		ADD698F433C4B80E9C3DDC5983E6105B /* Media.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Source/YouTubeFloatingPlayer/Resources/Media.xcassets; sourceTree = "<group>"; };
+		AE66EECADC73A9B87F332D1D1534B248 /* YouTubeFloatingPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YouTubeFloatingPlayer-dummy.m"; sourceTree = "<group>"; };
 		B185E63D9378AF53C92050B86CA26526 /* Pods-YouTubeFloatingPlayer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YouTubeFloatingPlayer_Example-frameworks.sh"; sourceTree = "<group>"; };
+		BA87C0FA1082FA0A13DAB7B167ABEA82 /* YTFViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = YTFViewController.xib; path = Source/YouTubeFloatingPlayer/Resources/YTFViewController.xib; sourceTree = "<group>"; };
+		BAB4AB2399427FEA375442EC133413F7 /* YouTubeFloatingPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YouTubeFloatingPlayer-umbrella.h"; sourceTree = "<group>"; };
+		BBB63781DAF5285C5A7946F2B6193329 /* YTFAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YTFAnimation.swift; path = Source/YouTubeFloatingPlayer/Classes/YTFAnimation.swift; sourceTree = "<group>"; };
 		C0A26821F8DC21FE3436AFC4BCB09D61 /* youtube-ios-player-helper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "youtube-ios-player-helper-dummy.m"; sourceTree = "<group>"; };
-		C1A472DF246B6006C709BB5904D7AB35 /* YouTubeFloatingPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YouTubeFloatingPlayer-umbrella.h"; sourceTree = "<group>"; };
-		C22CA2EF8BBB9B42DF2A1151DCFBC68C /* YTFPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YTFPlayer.swift; sourceTree = "<group>"; };
-		C2C45DAB35BB89952B3EA4CE34C7A6D4 /* CustomProgressSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomProgressSlider.swift; sourceTree = "<group>"; };
-		C837E4ABB1CDC0B47DD2B0C7E06EF407 /* YouTubeFloatingPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YouTubeFloatingPlayer-prefix.pch"; sourceTree = "<group>"; };
-		CD552651A724EBF96F251C74468CBEC1 /* YouTubeFloatingPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = YouTubeFloatingPlayer.modulemap; sourceTree = "<group>"; };
 		CFA88FE0467872DAC0C3C9E415638036 /* Pods-YouTubeFloatingPlayer_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YouTubeFloatingPlayer_Tests-umbrella.h"; sourceTree = "<group>"; };
 		D152D0FF6728191EA3B7E0491D7E42A4 /* Pods-YouTubeFloatingPlayer_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YouTubeFloatingPlayer_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D4799393EAD678EAE1DA6486B3965A0F /* youtube-ios-player-helper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-umbrella.h"; sourceTree = "<group>"; };
 		DB0140ADB78A1AEF09614CEFC629AC6E /* Pods-YouTubeFloatingPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YouTubeFloatingPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DE225E90041086B6D95C1230DAF8077A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E09C67C4CD74F2342E1499F6AC23536B /* YTFAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YTFAnimation.swift; sourceTree = "<group>"; };
-		E4C6719A6E63357AD816CD5655250EA2 /* Pods_YouTubeFloatingPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouTubeFloatingPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C6719A6E63357AD816CD5655250EA2 /* Pods_YouTubeFloatingPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YouTubeFloatingPlayer_Tests.framework; path = "Pods-YouTubeFloatingPlayer_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E524E40003C7272EFBBD7A57A5754BC6 /* ResourceBundle-YouTubeFloatingPlayer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-YouTubeFloatingPlayer-Info.plist"; sourceTree = "<group>"; };
+		E73EA4852163DA5D4F88C42AD2DFD8E9 /* CustomProgressSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomProgressSlider.swift; path = Source/YouTubeFloatingPlayer/Classes/CustomProgressSlider.swift; sourceTree = "<group>"; };
 		F1D0ADC0049A476C95664C43B9E8C8B2 /* Pods-YouTubeFloatingPlayer_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YouTubeFloatingPlayer_Example-resources.sh"; sourceTree = "<group>"; };
 		F2BE5644FAE2154AF4E44AD9BC397C0D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F91E82444C6404881FB26B0725A8CBC4 /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = youtube_ios_player_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2EC5DB72B2B1AE52C58634FC6EBF419 /* YouTubeFloatingPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = YouTubeFloatingPlayer.modulemap; sourceTree = "<group>"; };
+		F91E82444C6404881FB26B0725A8CBC4 /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = youtube_ios_player_helper.framework; path = "youtube-ios-player-helper.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB9ED4BB78AACC0747245AEA82A9A153 /* YouTubeFloatingPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YouTubeFloatingPlayer.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E3A2786DAFEEDBA60E3BE38555AC2A9 /* Foundation.framework in Frameworks */,
+				66917C2801058F934F78C0430E31B376 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C86B3F203A0FB2541C1260DAACB6B00 /* Foundation.framework in Frameworks */,
+				D3156D424AC26FFA9E80629F71563D66 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C4868CFE4218EFB6114904D83D2AA7A /* Foundation.framework in Frameworks */,
+				018D8A7BFDF6FD112638CC02CAA5A19D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B93EA4CB247B2A5CFD632DE7C0D1B64 /* Foundation.framework in Frameworks */,
+				C48A18614265A1F5A9310B74631050AB /* Foundation.framework in Frameworks */,
 				7EDD0C64A7870DFBE3108E0EC08B0651 /* youtube_ios_player_helper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,30 +164,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		048E435A349B566D28249FC3B33DB996 /* YouTubeFloatingPlayer */ = {
+		1A119CC0A7F3305F5AA749598E9D0B5B /* YouTubeFloatingPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				84323E2EF031B43F06A4D1F11B1C1135 /* Support Files */,
-				7607D52F5B4B4FDEA027B256F09053A9 /* YouTubeFloatingPlayer */,
+				E73EA4852163DA5D4F88C42AD2DFD8E9 /* CustomProgressSlider.swift */,
+				BBB63781DAF5285C5A7946F2B6193329 /* YTFAnimation.swift */,
+				03A73831E2721D01723679CAC94B59F5 /* YTFPlayer.swift */,
+				276984691234CCC8F1788942406ACACC /* YTFPlayerControls.swift */,
+				2285E91AD24C729708745727398F3226 /* YTFPopupCloseButton.swift */,
+				AD787CEDE9BD3AF9F9D1CD31D50FBCC5 /* YTFViewController.swift */,
+				67D14E40FBF3CFD6909C5418518523C9 /* Resources */,
+				75B89CC4687EC82B0C25EDB4613BC863 /* Support Files */,
 			);
 			name = YouTubeFloatingPlayer;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		226FC66262696509196CF6D5D76AE669 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				048E435A349B566D28249FC3B33DB996 /* YouTubeFloatingPlayer */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		38EE802CC17DD6264FD0AB65B6E231C9 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				365EEE7FF60E0C976009BDAF8E7EDEBF /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		432CF9205CB86CBECF1534BA487293E6 /* Pods-YouTubeFloatingPlayer_Tests */ = {
@@ -208,19 +198,6 @@
 			path = "Target Support Files/Pods-YouTubeFloatingPlayer_Tests";
 			sourceTree = "<group>";
 		};
-		4F59B77601E5B3D6CF88E649054FC6E4 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				C2C45DAB35BB89952B3EA4CE34C7A6D4 /* CustomProgressSlider.swift */,
-				E09C67C4CD74F2342E1499F6AC23536B /* YTFAnimation.swift */,
-				C22CA2EF8BBB9B42DF2A1151DCFBC68C /* YTFPlayer.swift */,
-				3ECC3F73A72DFC9FAEDCF4792338C482 /* YTFPlayerControls.swift */,
-				12ADAE670E24962AEF9968A2B9B7CA65 /* YTFPopupCloseButton.swift */,
-				7A2F07833D623E5F533B09DCFB3472D8 /* YTFViewController.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		50B18708EB58391ED7C71079211A24F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,18 +214,9 @@
 			isa = PBXGroup;
 			children = (
 				60A6DB52CCBA3162B9A0DB227E552733 /* youtube_ios_player_helper.framework */,
-				38EE802CC17DD6264FD0AB65B6E231C9 /* iOS */,
+				65BE9B9FF22F43152F8CFD94052B52CD /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		513B62961E6D011000D1A071 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				513B62971E6D011A00D1A071 /* Media.xcassets */,
-				513B62981E6D011A00D1A071 /* YTFViewController.xib */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		5AA0A0DF7E974A62D820E4CE58EBA653 /* Targets Support Files */ = {
@@ -268,20 +236,43 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		7607D52F5B4B4FDEA027B256F09053A9 /* YouTubeFloatingPlayer */ = {
+		65BE9B9FF22F43152F8CFD94052B52CD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				513B62961E6D011000D1A071 /* Resources */,
-				4F59B77601E5B3D6CF88E649054FC6E4 /* Classes */,
+				8D8674D1E7C885582EB7D21E40091DF2 /* Foundation.framework */,
 			);
-			path = YouTubeFloatingPlayer;
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		67D14E40FBF3CFD6909C5418518523C9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADD698F433C4B80E9C3DDC5983E6105B /* Media.xcassets */,
+				BA87C0FA1082FA0A13DAB7B167ABEA82 /* YTFViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		75B89CC4687EC82B0C25EDB4613BC863 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DC64C59DFD32FD28C7C27B2181FA5D2 /* Info.plist */,
+				E524E40003C7272EFBBD7A57A5754BC6 /* ResourceBundle-YouTubeFloatingPlayer-Info.plist */,
+				F2EC5DB72B2B1AE52C58634FC6EBF419 /* YouTubeFloatingPlayer.modulemap */,
+				FB9ED4BB78AACC0747245AEA82A9A153 /* YouTubeFloatingPlayer.xcconfig */,
+				AE66EECADC73A9B87F332D1D1534B248 /* YouTubeFloatingPlayer-dummy.m */,
+				997B909F7B0F02020B91AFF904BCD193 /* YouTubeFloatingPlayer-prefix.pch */,
+				BAB4AB2399427FEA375442EC133413F7 /* YouTubeFloatingPlayer-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/YouTubeFloatingPlayer";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				226FC66262696509196CF6D5D76AE669 /* Development Pods */,
+				9F5D1777E7D4E7CFE37DF77E0D0DBAF9 /* Development Pods */,
 				5139767D9828D0C8D57AE83AEAD73210 /* Frameworks */,
 				EFBD6D5070879E977E70ED78BBDF7218 /* Pods */,
 				50B18708EB58391ED7C71079211A24F0 /* Products */,
@@ -289,19 +280,12 @@
 			);
 			sourceTree = "<group>";
 		};
-		84323E2EF031B43F06A4D1F11B1C1135 /* Support Files */ = {
+		9F5D1777E7D4E7CFE37DF77E0D0DBAF9 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				465259D997709999BE9A25260399018A /* Info.plist */,
-				1206237CA6B68F0A020899A0D93BD89B /* ResourceBundle-YouTubeFloatingPlayer-Info.plist */,
-				CD552651A724EBF96F251C74468CBEC1 /* YouTubeFloatingPlayer.modulemap */,
-				25DBB2CF94940459170F766594B185F6 /* YouTubeFloatingPlayer.xcconfig */,
-				1363A5EB3BFA3C75145511DFDD90698E /* YouTubeFloatingPlayer-dummy.m */,
-				C837E4ABB1CDC0B47DD2B0C7E06EF407 /* YouTubeFloatingPlayer-prefix.pch */,
-				C1A472DF246B6006C709BB5904D7AB35 /* YouTubeFloatingPlayer-umbrella.h */,
+				1A119CC0A7F3305F5AA749598E9D0B5B /* YouTubeFloatingPlayer */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/YouTubeFloatingPlayer";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		9FF5E66EAC472A1CA3FB71D79878C9A0 /* youtube-ios-player-helper */ = {
@@ -312,6 +296,7 @@
 				5E68BFF7326A13AE8E8CDE300B4E13BE /* Resources */,
 				A1E6C96D25FB9EF512BEC9F2334B8A87 /* Support Files */,
 			);
+			name = "youtube-ios-player-helper";
 			path = "youtube-ios-player-helper";
 			sourceTree = "<group>";
 		};
@@ -398,7 +383,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3CA3A962A11197A5D1BAE8787AE5254 /* Build configuration list for PBXNativeTarget "YouTubeFloatingPlayer" */;
 			buildPhases = (
-				46E1A3A9A81FF6713F52A561EE7F97E3 /* Sources */,
+				B0FB6B9320861ED85D6AE5E917162552 /* Sources */,
 				B68216050132047831FC102264754385 /* Frameworks */,
 				6138EB06D7121D75EB10956F28AC2DEA /* Resources */,
 				86AC08584F691A6717EB296B89E7FF3C /* Headers */,
@@ -474,7 +459,7 @@
 			buildPhases = (
 				356883A6B5E19562B1E082C2AB3E0F42 /* Sources */,
 				2E96B04A442C233434F255A7D0AAC739 /* Frameworks */,
-				2FB9BF8B125643BB3B9B9B6430EE1A96 /* Resources */,
+				AD79D482A9DB090E27C21AC7CB08B31E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -491,7 +476,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -524,20 +509,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2FB9BF8B125643BB3B9B9B6430EE1A96 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				513B629A1E6D0F2100D1A071 /* YTFViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6138EB06D7121D75EB10956F28AC2DEA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				513B629B1E6D0F2500D1A071 /* Media.xcassets in Resources */,
 				76A502BB3939340A0E9FDDF2454F03A7 /* YouTubeFloatingPlayer.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD79D482A9DB090E27C21AC7CB08B31E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF1A961664FB49E081F77448D84A3504 /* Media.xcassets in Resources */,
+				CA5E6806A080E0D0FB8052355EE5F2BC /* YTFViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,25 +536,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46E1A3A9A81FF6713F52A561EE7F97E3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E3690DA5E51173A856BBC8B4166F0ADF /* CustomProgressSlider.swift in Sources */,
-				E94A236D8DD90CC6B7DB20F178332EE2 /* YouTubeFloatingPlayer-dummy.m in Sources */,
-				B626BE8869E795C3A24951D50402F27D /* YTFAnimation.swift in Sources */,
-				848751937766135F767AA2374F759B72 /* YTFPlayer.swift in Sources */,
-				D1AF15B1EF845F035AB2E417E5FBC62E /* YTFPlayerControls.swift in Sources */,
-				79636E301E5C78B6667F1B6452B4B0C2 /* YTFPopupCloseButton.swift in Sources */,
-				6891825E186879D66CA5FBAF3620EB8B /* YTFViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4DCF43B593FCE54B689F250111068813 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5DB8D302FE629F7D6101313E6E91804B /* Pods-YouTubeFloatingPlayer_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FB6B9320861ED85D6AE5E917162552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B345482BC1A53CBB58BF87FE7FD8ABA /* CustomProgressSlider.swift in Sources */,
+				81A953184D85843C42CE491E7691479D /* YouTubeFloatingPlayer-dummy.m in Sources */,
+				D91646ED3AF6E6892805F8F5A5FDA118 /* YTFAnimation.swift in Sources */,
+				0B3C864344941DBEB9002BAFB4A8E237 /* YTFPlayer.swift in Sources */,
+				0CA44456EC79D59D9D5F0A3909FB3D21 /* YTFPlayerControls.swift in Sources */,
+				765AF75698FA2F05486E850124B79E73 /* YTFPopupCloseButton.swift in Sources */,
+				F22E8A4A13117F0C5EE644F5D607A67E /* YTFViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,10 +605,85 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1A04CC00EF1832906B13B54D8D5813F7 /* Debug */ = {
+		0753854317642291894DB7035782CEC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DDD744B745914FD91C5A8E868DC0B14 /* Pods-YouTubeFloatingPlayer_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Example/Pods-YouTubeFloatingPlayer_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_YouTubeFloatingPlayer_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0A37CAFE9C88C5FB31E846D0702FE871 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7B57724CE1795EDA46E6FDFC9DFBB1 /* Pods-YouTubeFloatingPlayer_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Tests/Pods-YouTubeFloatingPlayer_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_YouTubeFloatingPlayer_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		140A9E83FD6D2627365C9F168A757FB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB0140ADB78A1AEF09614CEFC629AC6E /* Pods-YouTubeFloatingPlayer_Example.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -649,17 +709,20 @@
 				PRODUCT_NAME = Pods_YouTubeFloatingPlayer_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		5649EFFE67E5E6662215B9C5346CF176 /* Release */ = {
+		1C7CF9ABDD0793B2F9E97D521CBD9A3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A7EC547EDE57104D8822189323406DBA /* youtube-ios-player-helper.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -681,6 +744,7 @@
 				PRODUCT_NAME = youtube_ios_player_helper;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -688,11 +752,186 @@
 			};
 			name = Release;
 		};
-		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
+		3CA26EBDA6AB8F6A69EABDFCEEE2D000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9ED4BB78AACC0747245AEA82A9A153 /* YouTubeFloatingPlayer.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/YouTubeFloatingPlayer/YouTubeFloatingPlayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YouTubeFloatingPlayer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YouTubeFloatingPlayer/YouTubeFloatingPlayer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = YouTubeFloatingPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3E3100E0756AF92AFC968A7F8025C597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9ED4BB78AACC0747245AEA82A9A153 /* YouTubeFloatingPlayer.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/YouTubeFloatingPlayer/YouTubeFloatingPlayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YouTubeFloatingPlayer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YouTubeFloatingPlayer/YouTubeFloatingPlayer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = YouTubeFloatingPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5654D935E9BA37132D815DFF5BCC95DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14E447CB0238E7867D53D545814A3E3C /* Pods-YouTubeFloatingPlayer_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Tests/Pods-YouTubeFloatingPlayer_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_YouTubeFloatingPlayer_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5BB892CFF9C7F63E49EF1977BC3E5746 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7EC547EDE57104D8822189323406DBA /* youtube-ios-player-helper.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/youtube-ios-player-helper/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = youtube_ios_player_helper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		61CCC8FA5F6D1CB957CCC7844259A3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9ED4BB78AACC0747245AEA82A9A153 /* YouTubeFloatingPlayer.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/YouTubeFloatingPlayer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/YouTubeFloatingPlayer/ResourceBundle-YouTubeFloatingPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = YouTubeFloatingPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		6B0A686D806F4E9B4DEE7D5FD620251F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9ED4BB78AACC0747245AEA82A9A153 /* YouTubeFloatingPlayer.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/YouTubeFloatingPlayer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/YouTubeFloatingPlayer/ResourceBundle-YouTubeFloatingPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = YouTubeFloatingPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		97803B46811A9BDB5E70FA1303AFBFFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -700,10 +939,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
@@ -728,216 +970,17 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		61CCC8FA5F6D1CB957CCC7844259A3D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25DBB2CF94940459170F766594B185F6 /* YouTubeFloatingPlayer.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/YouTubeFloatingPlayer";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/YouTubeFloatingPlayer/ResourceBundle-YouTubeFloatingPlayer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = YouTubeFloatingPlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		6B0A686D806F4E9B4DEE7D5FD620251F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25DBB2CF94940459170F766594B185F6 /* YouTubeFloatingPlayer.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/YouTubeFloatingPlayer";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/YouTubeFloatingPlayer/ResourceBundle-YouTubeFloatingPlayer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = YouTubeFloatingPlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		6BFB7F56781BF7F0811BA6E54D8B6128 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25DBB2CF94940459170F766594B185F6 /* YouTubeFloatingPlayer.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/YouTubeFloatingPlayer/YouTubeFloatingPlayer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/YouTubeFloatingPlayer/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/YouTubeFloatingPlayer/YouTubeFloatingPlayer.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = YouTubeFloatingPlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		86255979839DBB2C1A466253DEAE5F78 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14E447CB0238E7867D53D545814A3E3C /* Pods-YouTubeFloatingPlayer_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Tests/Pods-YouTubeFloatingPlayer_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_YouTubeFloatingPlayer_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A5970A3DB1FC9D19A4AD44D9824A697C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25DBB2CF94940459170F766594B185F6 /* YouTubeFloatingPlayer.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/YouTubeFloatingPlayer/YouTubeFloatingPlayer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/YouTubeFloatingPlayer/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/YouTubeFloatingPlayer/YouTubeFloatingPlayer.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = YouTubeFloatingPlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AC8B9A455AE0182EB6854502B5760FAF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7EC547EDE57104D8822189323406DBA /* youtube-ios-player-helper.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/youtube-ios-player-helper/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = youtube_ios_player_helper;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B55317B3F1B7B3A9B8281D75AFAC5A05 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7B57724CE1795EDA46E6FDFC9DFBB1 /* Pods-YouTubeFloatingPlayer_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Tests/Pods-YouTubeFloatingPlayer_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_YouTubeFloatingPlayer_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
+		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -945,10 +988,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
@@ -973,41 +1019,6 @@
 			};
 			name = Release;
 		};
-		C90984D59205306AF1C55AEED08FBE24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DDD744B745914FD91C5A8E868DC0B14 /* Pods-YouTubeFloatingPlayer_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-YouTubeFloatingPlayer_Example/Pods-YouTubeFloatingPlayer_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_YouTubeFloatingPlayer_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1023,8 +1034,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
-				B7324857C38B065FEB1EEE3105C2367A /* Release */,
+				97803B46811A9BDB5E70FA1303AFBFFE /* Debug */,
+				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1032,8 +1043,8 @@
 		63C6D97D13921EB6BFDC205674078D31 /* Build configuration list for PBXNativeTarget "Pods-YouTubeFloatingPlayer_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A04CC00EF1832906B13B54D8D5813F7 /* Debug */,
-				C90984D59205306AF1C55AEED08FBE24 /* Release */,
+				140A9E83FD6D2627365C9F168A757FB5 /* Debug */,
+				0753854317642291894DB7035782CEC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1041,8 +1052,8 @@
 		6AC60D83C045B96EDAA36BCD2E20918D /* Build configuration list for PBXNativeTarget "Pods-YouTubeFloatingPlayer_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B55317B3F1B7B3A9B8281D75AFAC5A05 /* Debug */,
-				86255979839DBB2C1A466253DEAE5F78 /* Release */,
+				0A37CAFE9C88C5FB31E846D0702FE871 /* Debug */,
+				5654D935E9BA37132D815DFF5BCC95DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1050,8 +1061,8 @@
 		C3CA3A962A11197A5D1BAE8787AE5254 /* Build configuration list for PBXNativeTarget "YouTubeFloatingPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6BFB7F56781BF7F0811BA6E54D8B6128 /* Debug */,
-				A5970A3DB1FC9D19A4AD44D9824A697C /* Release */,
+				3CA26EBDA6AB8F6A69EABDFCEEE2D000 /* Debug */,
+				3E3100E0756AF92AFC968A7F8025C597 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1059,8 +1070,8 @@
 		CBB0C43777E9C5293D4FC8E6119A913B /* Build configuration list for PBXNativeTarget "youtube-ios-player-helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC8B9A455AE0182EB6854502B5760FAF /* Debug */,
-				5649EFFE67E5E6662215B9C5346CF176 /* Release */,
+				5BB892CFF9C7F63E49EF1977BC3E5746 /* Debug */,
+				1C7CF9ABDD0793B2F9E97D521CBD9A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

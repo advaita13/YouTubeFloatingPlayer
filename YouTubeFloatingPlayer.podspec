@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YouTubeFloatingPlayer'
-  s.version          = '1.0.1'
-  s.summary          = 'Swift based floating Youtube Player.'
+  s.version          = '1.0.4'
+  s.summary          = 'Youtube-styled Floating Player written in Swift'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,9 +17,9 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-#  s.description      = <<-DESC
-# TODO: Add long description of the pod here.
-#                        DESC
+  s.description      = <<-DESC
+    A floating video player, similar to the one used in the YouTube app, written in Swift 3. This player is interactive in nature: drag to minimize, swipe to dismiss. Furthermore, it supports TableView as well as any other UIView underneath the video player while the player is in normal mode.
+                        DESC
 
   s.homepage         = 'https://github.com/advaita13/YouTubeFloatingPlayer'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'

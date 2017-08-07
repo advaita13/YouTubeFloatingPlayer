@@ -18,10 +18,10 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "YouTubeFloatingPlayer/Classes/**/*",
+  "source_files": "YouTubeFloatingPlayer/Sources/Classes/**/*",
   "resource_bundles": {
     "YouTubeFloatingPlayer": [
-      "YouTubeFloatingPlayer/Resources/**/*.{xib,xcassets,imageset,png}"
+      "YouTubeFloatingPlayer/Sources/Resources/**/*.{xib,xcassets,imageset,png}"
     ]
   },
   "dependencies": {

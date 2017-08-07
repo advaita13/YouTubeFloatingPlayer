@@ -290,9 +290,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YouTubeFloatingPlayer_Example/Pods-YouTubeFloatingPlayer_Example-resources.sh",
+				"$PODS_CONFIGURATION_BUILD_DIR/YouTubeFloatingPlayer/YouTubeFloatingPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

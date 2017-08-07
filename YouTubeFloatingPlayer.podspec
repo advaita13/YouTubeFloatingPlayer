@@ -30,9 +30,9 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'YouTubeFloatingPlayer/Classes/**/*'
+  s.source_files = 'YouTubeFloatingPlayer/Sources/Classes/**/*'
   s.resource_bundles = {
-    'YouTubeFloatingPlayer' => ['YouTubeFloatingPlayer/Resources/**/*.{xib,xcassets,imageset,png}']
+    'YouTubeFloatingPlayer' => ['YouTubeFloatingPlayer/Sources/Resources/**/*.{xib,xcassets,imageset,png}']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

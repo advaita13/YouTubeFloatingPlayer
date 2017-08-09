@@ -76,56 +76,56 @@ extension YTFViewController {
         
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
             self.minimizeButton.isHidden = true
+            
             self.playerView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
             
             self.playerView.frame = CGRect(x: self.initialFirstViewFrame!.origin.x, y: self.initialFirstViewFrame!.origin.x, width: self.initialFirstViewFrame!.size.width, height: self.initialFirstViewFrame!.size.height)
             
             }, completion: { finished in
                 self.isFullscreen = true
-                self.fullscreen.setImage(self.unfullscreenImage, for: UIControlState.normal)
-                
-                let originY = self.initialFirstViewFrame!.size.width - self.playerControlsFrame!.height
-                
-                self.backPlayerControlsView.frame.origin.x = self.initialFirstViewFrame!.origin.x
-                self.backPlayerControlsView.frame.origin.y = originY
-                self.backPlayerControlsView.frame.size.width = self.initialFirstViewFrame!.size.height
-                
-                self.playerControlsView.frame.origin.x = self.initialFirstViewFrame!.origin.x
-                self.playerControlsView.frame.origin.y = originY
-                self.playerControlsView.frame.size.width = self.initialFirstViewFrame!.size.height
-                
-                self.videoView.frame.origin.x = self.initialFirstViewFrame!.origin.x
-                self.videoView.frame.origin.y = self.initialFirstViewFrame!.origin.y
-                self.videoView.frame.size.height = self.initialFirstViewFrame!.size.width
-                self.videoView.frame.size.width = self.initialFirstViewFrame!.size.height
-                
                 self.videoView.isHidden = false
-                
-                self.showPlayerControls()
+                self.initFullscreenView()
+                self.playerDelegate?.playerStateChanged(to: .fullscreen)
         })
     }
     
     func setPlayerToNormalScreen() {
         
-        UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
-            self.playerView.transform = CGAffineTransform(rotationAngle: 0)
+        guard let webView = ytfFullscreenViewController?.webView else {
+            return
+        }
+        
+        webView.frame = self.videoView.frame
+        videoView.addSubview(webView)
+        videoView.delegate = self
+        
+        ytfFullscreenViewController?.dismiss(animated: false, completion: {
+            self.ytfFullscreenViewController = nil
             
-            self.playerView.frame = CGRect(x: self.playerViewFrame!.origin.x, y: self.playerViewFrame!.origin.x, width: self.playerViewFrame!.size.width, height: self.playerViewFrame!.size.height)
-            
-            let originY = self.playerViewFrame!.size.height - self.playerControlsFrame!.height
-            self.backPlayerControlsView.frame.origin.x = self.initialFirstViewFrame!.origin.x
-            self.backPlayerControlsView.frame.origin.y = originY
-            self.backPlayerControlsView.frame.size.width = self.playerViewFrame!.size.width
-            
-            self.playerControlsView.frame.origin.x = self.initialFirstViewFrame!.origin.x
-            self.playerControlsView.frame.origin.y = originY
-            self.playerControlsView.frame.size.width = self.playerViewFrame!.size.width
-            
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
+                
+                self.playerView.transform = CGAffineTransform(rotationAngle: 0)
+                
+                self.playerView.frame = CGRect(x: self.playerViewFrame!.origin.x, y: self.playerViewFrame!.origin.y, width: self.playerViewFrame!.size.width, height: self.playerViewFrame!.size.height)
+                
+                //            let originY = self.playerViewFrame!.size.height - self.playerControlsFrame!.height
+                //            self.backPlayerControlsView.frame.origin.x = self.initialFirstViewFrame!.origin.x
+                //            self.backPlayerControlsView.frame.origin.y = originY
+                //            self.backPlayerControlsView.frame.size.width = self.playerViewFrame!.size.width
+                //
+                //            self.playerControlsView.frame.origin.x = self.initialFirstViewFrame!.origin.x
+                //            self.playerControlsView.frame.origin.y = originY
+                //            self.playerControlsView.frame.size.width = self.playerViewFrame!.size.width
+                
             }, completion: { finished in
                 self.isFullscreen = false
-                self.minimizeButton.isHidden = false
                 self.fullscreen.setImage(self.fullscreenImage, for: UIControlState.normal)
+                self.playerDelegate?.playerStateChanged(to: .expanded)
+            })
         })
+        
+        
+        
     }
     
     func panAction(recognizer: UIPanGestureRecognizer) {
@@ -270,6 +270,20 @@ extension YTFViewController {
             recognizer.setTranslation(CGPoint(x: 0, y: 0), in: recognizer.view)
             
         } else {
+            
+            if trueOffset < 20.0 {
+                if !shouldHideStatusBar {
+                    playerDelegate?.playerStateChanged(to: .expanded)
+                    print(playerDelegate)
+                }
+                shouldHideStatusBar = true
+            } else {
+                if shouldHideStatusBar {
+                    playerDelegate?.playerStateChanged(to: .minimized)
+                }
+                shouldHideStatusBar = false
+            }
+            
             //Use this offset to adjust the position of your view accordingly
             viewMinimizedFrame?.origin.y = trueOffset
             viewMinimizedFrame?.origin.x = xOffset - 6
@@ -416,6 +430,7 @@ extension YTFViewController {
                 self.playerView.addGestureRecognizer(self.playerTapGesture!)
                 self.tableViewContainer.backgroundColor = UIColor.black
                 self.showPlayerControls()
+                self.playerDelegate?.playerStateChanged(to: .expanded)
         })
     }
     

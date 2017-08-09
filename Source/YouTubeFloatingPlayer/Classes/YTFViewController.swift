@@ -9,6 +9,16 @@
 import UIKit
 import youtube_ios_player_helper
 
+public enum YTFPlayerViewState: String {
+    case minimized = "0"
+    case expanded = "1"
+    case fullscreen = "2"
+}
+
+public protocol YTFPlayerDelegate: class {
+    func playerStateChanged(to playerState: YTFPlayerViewState)
+}
+
 class YTFViewController: UIViewController {
     
     @IBOutlet weak var play: UIButton!
@@ -38,6 +48,8 @@ class YTFViewController: UIViewController {
     var isFullscreen: Bool = false
     var sliderValueChanged: Bool = false
     var isMinimized: Bool = false
+    var isFirstAppearence: Bool = true
+    var shouldHideStatusBar: Bool = true
     
     var hideTimer: Timer?
     
@@ -65,6 +77,9 @@ class YTFViewController: UIViewController {
     var minimizeImage: UIImage?
     
     var subviewForDetailsView: UIView?
+    var ytfFullscreenViewController: YTFFullscreenViewController?
+    
+    open weak var playerDelegate: YTFPlayerDelegate?
     
     enum UIPanGestureRecognizerDirection {
         case Undefined
@@ -85,8 +100,11 @@ class YTFViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        calculateFrames()
-        initDetailsView()
+        if isFirstAppearence {
+            calculateFrames()
+            initDetailsView()
+            isFirstAppearence = false
+        }
     }
     
     func initPlayerWithURLs() {
@@ -208,6 +226,37 @@ class YTFViewController: UIViewController {
         slider.minimumValue = 0.0
         slider.maximumValue = Float(duration)
         slider.value = currentTime
+    }
+    
+    func initFullscreenView() {
+        let bundle = Bundle(identifier: "org.cocoapods.YouTubeFloatingPlayer")
+        if let pathForAssetBundle = bundle?.path(forResource: "YouTubeFloatingPlayer", ofType: "bundle") {
+            if let resourceBundle = Bundle(path: pathForAssetBundle) {
+                
+                guard let webView = self.videoView.webView else {
+                    return
+                }
+                let ytfFullscreenViewController = YTFFullscreenViewController(nibName: "YTFFullscreenViewController", bundle: resourceBundle)
+                ytfFullscreenViewController.ytfViewController = self
+                ytfFullscreenViewController.ytPlayerView = self.videoView
+                ytfFullscreenViewController.ytPlayerView?.delegate = ytfFullscreenViewController
+                ytfFullscreenViewController.webView = webView
+                webView.frame = ytfFullscreenViewController.view.frame
+                ytfFullscreenViewController.videoView.addSubview(webView)
+                
+                self.ytfFullscreenViewController = ytfFullscreenViewController
+                
+                self.present(ytfFullscreenViewController, animated: false, completion: {
+
+//                    ytfFullscreenViewController.videoView = self.videoView
+//                    ytfFullscreenViewController.webView = webView
+//                    webView.frame = ytfFullscreenViewController.view.frame
+//                    ytfFullscreenViewController.playerView.addSubview(webView)
+//                    
+//                    self.ytfFullscreenViewController = ytfFullscreenViewController
+                })
+            }
+        }
     }
 }
 

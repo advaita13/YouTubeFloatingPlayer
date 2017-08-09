@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTFFullScreenViewController" customModule="YouTubeFloatingPlayer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTFFullscreenViewController" customModule="YouTubeFloatingPlayer" customModuleProvider="target">
             <connections>
                 <outlet property="backPlayerControlsView" destination="iq4-kJ-Qq5" id="Kzs-8N-A8a"/>
                 <outlet property="currentTimeLabel" destination="vLI-ay-zsV" id="Y9H-wq-LCt"/>
@@ -18,9 +18,10 @@
                 <outlet property="fullscreen" destination="FUC-kd-Q6c" id="a0u-7F-v69"/>
                 <outlet property="play" destination="FfE-1X-woQ" id="u8e-d5-usH"/>
                 <outlet property="playerControlsView" destination="ZPe-wa-IDZ" id="l2h-lp-j7G"/>
-                <outlet property="playerView" destination="sfQ-u0-kLO" id="w3C-47-I4L"/>
+                <outlet property="playerView" destination="sfQ-u0-kLO" id="DLr-oI-7Cx"/>
                 <outlet property="progress" destination="TwB-qp-hHk" id="fc4-aR-GRn"/>
                 <outlet property="slider" destination="Lfz-35-Osa" id="mGS-Li-sAJ"/>
+                <outlet property="videoView" destination="qf2-ka-Tk5" id="JhJ-GP-zFq"/>
                 <outlet property="view" destination="Xmk-hr-qIq" id="09Q-sX-rTr"/>
             </connections>
         </placeholder>
@@ -83,7 +84,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="FUC-kd-Q6c" secondAttribute="height" multiplier="1:1" id="cc3-HC-ECC"/>
                                     </constraints>
-                                    <state key="normal" image="fullscreen"/>
+                                    <state key="normal" image="unfullscreen"/>
                                     <connections>
                                         <action selector="fullScreenTouchedWithSender:" destination="-1" eventType="touchUpInside" id="MgP-uj-4Zv"/>
                                     </connections>
@@ -159,7 +160,7 @@
         </view>
     </objects>
     <resources>
-        <image name="fullscreen" width="30" height="30"/>
         <image name="play" width="30" height="30"/>
+        <image name="unfullscreen" width="30" height="30"/>
     </resources>
 </document>

@@ -9,11 +9,12 @@
 import UIKit
 import youtube_ios_player_helper
 
-class YTFFullScreenViewController: UIViewController {
+class YTFFullscreenViewController: UIViewController {
     
     @IBOutlet weak var play: UIButton!
     @IBOutlet weak var fullscreen: UIButton!
     @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var playerControlsView: UIView!
     @IBOutlet weak var backPlayerControlsView: UIView!
     @IBOutlet weak var slider: CustomSlider!
@@ -23,8 +24,8 @@ class YTFFullScreenViewController: UIViewController {
     
     var playerTapGesture: UITapGestureRecognizer?
     
-    var videoView: YTPlayerView!
-    var webView: YTPlayerView!
+    var ytPlayerView: YTPlayerView?
+    var webView: UIWebView?
     
     var isOpen: Bool = false
     var isPlaying: Bool = false
@@ -61,15 +62,17 @@ class YTFFullScreenViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        ytPlayerView?.delegate = self
+        setupGestureRecognizer()
         setupImageAssets()
         showPlayerControls()
-        setupSlider(with: videoView.duration())
+        setupSlider(with: (ytPlayerView?.duration())!)
     }
     
     func setupGestureRecognizer() {
+        self.webView?.isUserInteractionEnabled = false
         self.playerTapGesture = UITapGestureRecognizer(target: self, action: #selector(showPlayerControls))
-        self.view.addGestureRecognizer(self.playerTapGesture!)
+        self.playerView.addGestureRecognizer(self.playerTapGesture!)
     }
     
     func setupImageAssets() {
@@ -90,7 +93,7 @@ class YTFFullScreenViewController: UIViewController {
         
         hideTimer?.invalidate()
         hideTimer = nil
-        hideTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(YTFViewController.hidePlayerControls(dontAnimate:)), userInfo: 1.0, repeats: false)
+        hideTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(hidePlayerControls(dontAnimate:)), userInfo: 1.0, repeats: false)
     }
     
     func resetHideTimer() {
@@ -114,7 +117,7 @@ class YTFFullScreenViewController: UIViewController {
         }
     }
     
-    func hidePlayerControls(dontAnimate: Bool) {
+    func hidePlayerControls(dontAnimate: Bool = false) {
         
         if (dontAnimate) {
             self.backPlayerControlsView.alpha = 0.0
@@ -138,16 +141,16 @@ class YTFFullScreenViewController: UIViewController {
     }
 }
 
-extension YTFFullScreenViewController {
+extension YTFFullscreenViewController {
     
     @IBAction func playTouched(sender: AnyObject) {
         
-        videoView.playerState()
+        ytPlayerView?.playerState()
         
-        if (videoView.playerState() == YTPlayerState.playing) {
-            videoView.pauseVideo()
+        if (ytPlayerView?.playerState() == YTPlayerState.playing) {
+            ytPlayerView?.pauseVideo()
         } else {
-            videoView.playVideo()
+            ytPlayerView?.playVideo()
         }
     }
     
@@ -174,7 +177,7 @@ extension YTFFullScreenViewController {
     @IBAction func valueChangedSlider(sender: AnyObject) {
         
         currentTimeLabel.text = timeFormatted(totalSeconds: Int(slider.value))
-        videoView.seek(toSeconds: slider.value, allowSeekAhead: true)
+        ytPlayerView?.seek(toSeconds: slider.value, allowSeekAhead: true)
     }
     
     @IBAction func touchCancelledSlider(sender: AnyObject) {
@@ -188,18 +191,20 @@ extension YTFFullScreenViewController {
     }
 }
 
-extension YTFFullScreenViewController: YTPlayerViewDelegate {
+extension YTFFullscreenViewController: YTPlayerViewDelegate {
     
     func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
-        
-        print("STATE", state.rawValue)
+
+        guard let ytPlayerView = ytPlayerView else {
+            return
+        }
         
         switch state {
         case .playing:
             play.setImage(pauseImage, for: .normal)
             isPlaying = true
-            currentTimeLabel.text = timeFormatted(totalSeconds: Int(videoView.currentTime()))
-            entireTimeLabel.text = timeFormatted(totalSeconds: Int(videoView.duration()))
+            currentTimeLabel.text = timeFormatted(totalSeconds: Int(ytPlayerView.currentTime()))
+            entireTimeLabel.text = timeFormatted(totalSeconds: Int(ytPlayerView.duration()))
         case .paused:
             play.setImage(playImage, for: .normal)
             isPlaying = false
@@ -208,7 +213,7 @@ extension YTFFullScreenViewController: YTPlayerViewDelegate {
             isPlaying = false
             currentTimeLabel.text = timeFormatted(totalSeconds: 0)
             slider.value = 0
-            videoView.playVideo()
+            ytPlayerView.playVideo()
         case .buffering:
             play.setImage(pauseImage, for: .normal)
             isPlaying = true
@@ -221,6 +226,8 @@ extension YTFFullScreenViewController: YTPlayerViewDelegate {
     func playerView(_ playerView: YTPlayerView, didPlayTime playTime: Float) {
         
         let currentTime = Int(playTime)
+        play.setImage(pauseImage, for: .normal)
+        isPlaying = true
         
         if (Int(slider.value) != currentTime) { // Change every second
             slider.value = Float(currentTime)

@@ -10,6 +10,8 @@ import UIKit
 
 public struct YTFPlayer {
     
+    public static var delegate: YTFPlayerDelegate?
+    
     public static func initYTF(with tableView: UITableView, tableCellNibName: String, tableCellReuseIdentifier: String, videoID: String) {
         
         if dragViewController == nil {
@@ -40,6 +42,8 @@ public struct YTFPlayer {
             
             dragViewController?.expandViews()
         }
+        
+        dragViewController?.playerDelegate = delegate
     }
     
     public static func initYTF(with customView: UIView, videoID: String) {
@@ -66,6 +70,8 @@ public struct YTFPlayer {
             
             dragViewController?.expandViews()
         }
+        
+        dragViewController?.playerDelegate = delegate
     }
     
     public static func showYTFView(viewController: UIViewController) {

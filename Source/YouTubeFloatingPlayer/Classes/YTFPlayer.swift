@@ -91,6 +91,8 @@ public struct YTFPlayer {
                 dragViewController!.view.frame = CGRect(x: 0, y: 0, width: UIApplication.shared.keyWindow!.bounds.width, height: UIApplication.shared.keyWindow!.bounds.height)
                 
                 dragViewController!.isOpen = true
+            }, completion: { completed in
+                self.delegate?.playerStateChanged(to: .expanded)
             })
         }
     }

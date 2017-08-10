@@ -38,7 +38,6 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvr-Y6-QnL">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="jvr-Y6-QnL" secondAttribute="height" multiplier="16:9" id="Z3U-XD-j7d"/>
                             </constraints>

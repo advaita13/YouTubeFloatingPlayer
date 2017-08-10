@@ -14,7 +14,7 @@ class ViewController: UITableViewController {
     let videoIds = ["f0NdOE5GTgo", "2q906bSLEkw", "xQ_IQS3VKjA"]
     let videoTitles = ["Blank Details View", "Custom Details View", "TableView"]
     
-    var shouldHideStatusBar = true
+    var shouldHideStatusBar = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,10 @@ class ViewController: UITableViewController {
     
     override var prefersStatusBarHidden: Bool {
         return shouldHideStatusBar
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -73,7 +77,7 @@ class ViewController: UITableViewController {
 extension ViewController: YTFPlayerDelegate {
     
     func playerStateChanged(to playerState: YTFPlayerViewState) {
-        shouldHideStatusBar = playerState == .expanded
+        shouldHideStatusBar = playerState != .minimized
         self.setNeedsStatusBarAppearanceUpdate()
     }
 }

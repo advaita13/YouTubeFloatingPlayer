@@ -43,15 +43,23 @@ class YTFFullscreenViewController: UIViewController {
     
     var ytfViewController: YTFViewController?
     
-    var orientation = UIInterfaceOrientationMask.landscapeRight
+    var orientation = UIInterfaceOrientation.landscapeRight
     var shouldHideStatusBar = true
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return orientation
+        switch orientation {
+        case .landscapeLeft:
+            return .landscapeRight
+        case .landscapeRight:
+            return .landscapeLeft
+        default:
+            return .landscapeRight
+        }
     }
     
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return .landscapeRight
+        
+        return orientation == .landscapeRight ? .landscapeLeft : .landscapeRight
     }
     
     override var shouldAutorotate: Bool {
@@ -156,17 +164,10 @@ extension YTFFullscreenViewController {
     
     @IBAction func fullScreenTouched(sender: AnyObject) {
         
-        orientation = UIInterfaceOrientationMask.portrait
         shouldHideStatusBar = false
         self.setNeedsStatusBarAppearanceUpdate()
         
         ytfViewController?.setPlayerToNormalScreen()
-        
-        if (!isFullscreen) {
-            
-        } else {
-            
-        }
     }
     
     @IBAction func touchDragInsideSlider(sender: AnyObject) {

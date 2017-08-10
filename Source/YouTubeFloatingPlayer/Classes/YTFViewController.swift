@@ -48,6 +48,7 @@ class YTFViewController: UIViewController {
     var isFullscreen: Bool = false
     var sliderValueChanged: Bool = false
     var isMinimized: Bool = false
+    var isExpanded: Bool = true
     var isFirstAppearence: Bool = true
     var shouldHideStatusBar: Bool = true
     
@@ -79,6 +80,20 @@ class YTFViewController: UIViewController {
     var subviewForDetailsView: UIView?
     var ytfFullscreenViewController: YTFFullscreenViewController?
     
+    var currentDeviceOrientation: () -> UIInterfaceOrientation = {
+        
+        switch UIDevice.current.orientation {
+        case .landscapeLeft:
+            return .landscapeLeft
+        case .landscapeRight:
+            return .landscapeRight
+        case .portrait:
+            return .portrait
+        default:
+            return .unknown
+        }
+    }
+    
     open weak var playerDelegate: YTFPlayerDelegate?
     
     enum UIPanGestureRecognizerDirection {
@@ -90,6 +105,12 @@ class YTFViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(deviceDidRotate),
+            name: .UIDeviceOrientationDidChange,
+            object: nil)
         
         initPlayerWithURLs()
         setupImageAssets()
@@ -104,6 +125,36 @@ class YTFViewController: UIViewController {
             calculateFrames()
             initDetailsView()
             isFirstAppearence = false
+        }
+    }
+    
+    func deviceDidRotate() {
+        
+        if !isExpanded {
+            return
+        } else if isFullscreen {
+            
+            guard let currentViewOrientation = ytfFullscreenViewController?.orientation else {
+                return
+            }
+            
+            switch currentDeviceOrientation() {
+            case currentViewOrientation:
+                break
+            case .portrait:
+                setPlayerToNormalScreen()
+            default:
+                ytfFullscreenViewController?.orientation = currentDeviceOrientation()
+            }
+        } else {
+            switch currentDeviceOrientation() {
+            case .landscapeLeft:
+                setPlayerToFullscreen()
+            case .landscapeRight:
+                setPlayerToFullscreen()
+            default:
+                break
+            }
         }
     }
     
@@ -241,20 +292,13 @@ class YTFViewController: UIViewController {
                 ytfFullscreenViewController.ytPlayerView = self.videoView
                 ytfFullscreenViewController.ytPlayerView?.delegate = ytfFullscreenViewController
                 ytfFullscreenViewController.webView = webView
+                ytfFullscreenViewController.orientation = currentDeviceOrientation()
                 webView.frame = ytfFullscreenViewController.view.frame
                 ytfFullscreenViewController.videoView.addSubview(webView)
                 
                 self.ytfFullscreenViewController = ytfFullscreenViewController
                 
-                self.present(ytfFullscreenViewController, animated: false, completion: {
-
-//                    ytfFullscreenViewController.videoView = self.videoView
-//                    ytfFullscreenViewController.webView = webView
-//                    webView.frame = ytfFullscreenViewController.view.frame
-//                    ytfFullscreenViewController.playerView.addSubview(webView)
-//                    
-//                    self.ytfFullscreenViewController = ytfFullscreenViewController
-                })
+                self.present(ytfFullscreenViewController, animated: false, completion: nil)
             }
         }
     }

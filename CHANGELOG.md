@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2014-08-25
+### Native Fullscreen
+- Proper fullscreen mode
+- Player goes to fullscreen on rotating device
+- Hide status bar when Player is expanded
+- Fixed animations (for Plus sized devices)
+- Code cleanup
+
 ## [1.0.4] - 2014-08-07
 ### SPM Support
 - Added support for SPM

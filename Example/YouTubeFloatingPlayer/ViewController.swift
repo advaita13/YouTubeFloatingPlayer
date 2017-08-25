@@ -14,11 +14,18 @@ class ViewController: UITableViewController {
     let videoIds = ["f0NdOE5GTgo", "2q906bSLEkw", "xQ_IQS3VKjA"]
     let videoTitles = ["Blank Details View", "Custom Details View", "TableView"]
     
+    var shouldHideStatusBar = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        YTFPlayer.delegate = self
         tableView.register(UINib(nibName: "VideoCell", bundle: Bundle.main), forCellReuseIdentifier: "videoCell")
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return shouldHideStatusBar
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,6 +67,14 @@ class ViewController: UITableViewController {
         }
         
         YTFPlayer.showYTFView(viewController: self)
+    }
+}
+
+extension ViewController: YTFPlayerDelegate {
+    
+    func playerStateChanged(to playerState: YTFPlayerViewState) {
+        shouldHideStatusBar = playerState != .minimized
+        self.setNeedsStatusBarAppearanceUpdate()
     }
 }
 

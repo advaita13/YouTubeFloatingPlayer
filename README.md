@@ -6,6 +6,24 @@ A Swift-based video player inspired by YouTube. Based on [SwiftYouTubeFloatingPl
 [![License](https://img.shields.io/cocoapods/l/YouTubeFloatingPlayer.svg?style=flat)](http://cocoapods.org/pods/YouTubeFloatingPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/YouTubeFloatingPlayer.svg?style=flat)](http://cocoapods.org/pods/YouTubeFloatingPlayer)
 
+<table>
+	<tr>
+		<th>
+			<img src="Screenshots/expanded.jpg" width="220"/>
+		</th>
+		<th>
+			<img src="Screenshots/minimized.jpg" width="220"/>
+		</th>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td>
+		<img src="Screenshots/fullscreen.jpg" width="470"/>
+		</td>
+	</tr>
+</table>
+
 ## Features
 
 - Interactive, drag to minimize, swipe to dismiss
@@ -17,7 +35,7 @@ Currently YTFPlayer is only supported on applications supporting only portrait o
 
 ```swift
 func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
-    return UIInterfaceOrientationMask.Portrait
+    return UIInterfaceOrientationMask.portrait
 }
 ```
 

@@ -48,7 +48,6 @@ class YTFViewController: UIViewController {
     var isFullscreen: Bool = false
     var sliderValueChanged: Bool = false
     var isMinimized: Bool = false
-    var isExpanded: Bool = true
     var isFirstAppearence: Bool = true
     var shouldHideStatusBar: Bool = true
     
@@ -80,21 +79,13 @@ class YTFViewController: UIViewController {
     var subviewForDetailsView: UIView?
     var ytfFullscreenViewController: YTFFullscreenViewController?
     
-    var currentDeviceOrientation: () -> UIInterfaceOrientation = {
-        
-        switch UIDevice.current.orientation {
-        case .landscapeLeft:
-            return .landscapeLeft
-        case .landscapeRight:
-            return .landscapeRight
-        case .portrait:
-            return .portrait
-        default:
-            return .unknown
-        }
-    }
-    
     open weak var playerDelegate: YTFPlayerDelegate?
+    
+    var orientation = UIInterfaceOrientationMask.allButUpsideDown
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return orientation
+    }
     
     enum UIPanGestureRecognizerDirection {
         case Undefined
@@ -128,33 +119,15 @@ class YTFViewController: UIViewController {
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            setPlayerToFullscreen()
+        }
+    }
+    
     func deviceDidRotate() {
-        
-        if !isExpanded {
-            return
-        } else if isFullscreen {
-            
-            guard let currentViewOrientation = ytfFullscreenViewController?.orientation else {
-                return
-            }
-            
-            switch currentDeviceOrientation() {
-            case currentViewOrientation:
-                break
-            case .portrait:
-                setPlayerToNormalScreen()
-            default:
-                ytfFullscreenViewController?.orientation = currentDeviceOrientation()
-            }
-        } else {
-            switch currentDeviceOrientation() {
-            case .landscapeLeft:
-                setPlayerToFullscreen()
-            case .landscapeRight:
-                setPlayerToFullscreen()
-            default:
-                break
-            }
+        if UIDevice.current.orientation == .landscapeLeft {
+            setPlayerToFullscreen()
         }
     }
     
@@ -229,17 +202,17 @@ class YTFViewController: UIViewController {
         self.viewMinimizedFrame = self.tableViewContainer.frame
         self.playerControlsFrame = self.playerControlsView.frame
         
-        self.playerView.translatesAutoresizingMaskIntoConstraints = true
-        self.tableViewContainer.translatesAutoresizingMaskIntoConstraints = true
-        self.playerControlsView.translatesAutoresizingMaskIntoConstraints = true
-        self.backPlayerControlsView.translatesAutoresizingMaskIntoConstraints = true
-        self.tableViewContainer.frame = self.initialFirstViewFrame!
+        playerView.translatesAutoresizingMaskIntoConstraints = true
+        tableViewContainer.translatesAutoresizingMaskIntoConstraints = true
+        playerControlsView.translatesAutoresizingMaskIntoConstraints = true
+        backPlayerControlsView.translatesAutoresizingMaskIntoConstraints = true
+        tableViewContainer.frame = self.initialFirstViewFrame!
         self.playerControlsView.frame = self.playerControlsFrame!
         
-        self.transparentView = UIView.init(frame: initialFirstViewFrame!)
-        self.transparentView?.backgroundColor = UIColor.black
-        self.transparentView?.alpha = 0.0
-        self.onView?.addSubview(transparentView!)
+        transparentView = UIView.init(frame: initialFirstViewFrame!)
+        transparentView?.backgroundColor = UIColor.black
+        transparentView?.alpha = 0.0
+        onView?.addSubview(transparentView!)
         
         self.restrictOffset = Float(self.initialFirstViewFrame!.size.width) - 200
         self.restrictTrueOffset = Float(self.initialFirstViewFrame!.size.height) - 180
@@ -292,13 +265,20 @@ class YTFViewController: UIViewController {
                 ytfFullscreenViewController.ytPlayerView = self.videoView
                 ytfFullscreenViewController.ytPlayerView?.delegate = ytfFullscreenViewController
                 ytfFullscreenViewController.webView = webView
-                ytfFullscreenViewController.orientation = currentDeviceOrientation()
                 webView.frame = ytfFullscreenViewController.view.frame
                 ytfFullscreenViewController.videoView.addSubview(webView)
                 
                 self.ytfFullscreenViewController = ytfFullscreenViewController
                 
-                self.present(ytfFullscreenViewController, animated: false, completion: nil)
+                self.present(ytfFullscreenViewController, animated: false, completion: {
+
+//                    ytfFullscreenViewController.videoView = self.videoView
+//                    ytfFullscreenViewController.webView = webView
+//                    webView.frame = ytfFullscreenViewController.view.frame
+//                    ytfFullscreenViewController.playerView.addSubview(webView)
+//                    
+//                    self.ytfFullscreenViewController = ytfFullscreenViewController
+                })
             }
         }
     }

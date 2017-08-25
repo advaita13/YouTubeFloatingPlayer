@@ -64,8 +64,6 @@ extension YTFViewController: YTPlayerViewDelegate {
     
     func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
         
-        print("STATE", state.rawValue)
-        
         switch state {
         case .playing:
             play.setImage(pauseImage, for: .normal)

@@ -71,67 +71,78 @@ extension YTFViewController {
     
     func setPlayerToFullscreen() {
         
+        let rotationAngle = CGFloat(currentDeviceOrientation() == .landscapeRight ? -Double.pi / 2 : Double.pi / 2)
+        
         self.hidePlayerControls(dontAnimate: true)
         self.videoView.isHidden = true
         
-        UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
+        let playerAnimation = {
+            guard let initialFrame = self.initialFirstViewFrame else {
+                return
+            }
+            
             self.minimizeButton.isHidden = true
-            self.playerView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
-            
-            self.playerView.frame = CGRect(x: self.initialFirstViewFrame!.origin.x, y: self.initialFirstViewFrame!.origin.x, width: self.initialFirstViewFrame!.size.width, height: self.initialFirstViewFrame!.size.height)
-            
-            }, completion: { finished in
-                self.isFullscreen = true
-                self.fullscreen.setImage(self.unfullscreenImage, for: UIControlState.normal)
-                
-                let originY = self.initialFirstViewFrame!.size.width - self.playerControlsFrame!.height
-                
-                self.backPlayerControlsView.frame.origin.x = self.initialFirstViewFrame!.origin.x
-                self.backPlayerControlsView.frame.origin.y = originY
-                self.backPlayerControlsView.frame.size.width = self.initialFirstViewFrame!.size.height
-                
-                self.playerControlsView.frame.origin.x = self.initialFirstViewFrame!.origin.x
-                self.playerControlsView.frame.origin.y = originY
-                self.playerControlsView.frame.size.width = self.initialFirstViewFrame!.size.height
-                
-                self.videoView.frame.origin.x = self.initialFirstViewFrame!.origin.x
-                self.videoView.frame.origin.y = self.initialFirstViewFrame!.origin.y
-                self.videoView.frame.size.height = self.initialFirstViewFrame!.size.width
-                self.videoView.frame.size.width = self.initialFirstViewFrame!.size.height
-                
-                self.videoView.isHidden = false
-                
-                self.showPlayerControls()
-        })
+            self.playerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
+            self.playerView.frame = initialFrame
+        }
+        
+        let playerCompletion: (Bool) -> () = { finished in
+            self.isFullscreen = true
+            self.videoView.isHidden = false
+            self.initFullscreenView()
+            self.playerDelegate?.playerStateChanged(to: .fullscreen)
+        }
+        
+        UIView.animate(withDuration: 0.25,
+                       delay: 0.0,
+                       options: .curveEaseInOut,
+                       animations: playerAnimation,
+                       completion: playerCompletion)
     }
     
     func setPlayerToNormalScreen() {
         
-        UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
+        guard let webView = ytfFullscreenViewController?.webView else {
+            return
+        }
+        
+        webView.frame = self.videoView.frame
+        videoView.addSubview(webView)
+        videoView.delegate = self
+        
+        let playerAnimation = {
+            guard let playerFrame = self.playerViewFrame else {
+                return
+            }
+            
             self.playerView.transform = CGAffineTransform(rotationAngle: 0)
+            self.playerView.frame = playerFrame
+        }
+        
+        let playerCompletion: (Bool) -> () = { finished in
+            self.isFullscreen = false
+            self.fullscreen.setImage(self.fullscreenImage, for: UIControlState.normal)
+            self.playerDelegate?.playerStateChanged(to: .expanded)
+        }
+        
+        let fullScreenDismissCompletion = {
+            self.ytfFullscreenViewController = nil
             
-            self.playerView.frame = CGRect(x: self.playerViewFrame!.origin.x, y: self.playerViewFrame!.origin.x, width: self.playerViewFrame!.size.width, height: self.playerViewFrame!.size.height)
-            
-            let originY = self.playerViewFrame!.size.height - self.playerControlsFrame!.height
-            self.backPlayerControlsView.frame.origin.x = self.initialFirstViewFrame!.origin.x
-            self.backPlayerControlsView.frame.origin.y = originY
-            self.backPlayerControlsView.frame.size.width = self.playerViewFrame!.size.width
-            
-            self.playerControlsView.frame.origin.x = self.initialFirstViewFrame!.origin.x
-            self.playerControlsView.frame.origin.y = originY
-            self.playerControlsView.frame.size.width = self.playerViewFrame!.size.width
-            
-            }, completion: { finished in
-                self.isFullscreen = false
-                self.minimizeButton.isHidden = false
-                self.fullscreen.setImage(self.fullscreenImage, for: UIControlState.normal)
-        })
+            UIView.animate(withDuration: 0.25,
+                           delay: 0.0,
+                           options: .curveEaseInOut,
+                           animations: playerAnimation,
+                           completion: playerCompletion)
+        }
+        
+        ytfFullscreenViewController?.dismiss(animated: false, completion: fullScreenDismissCompletion)
     }
     
     func panAction(recognizer: UIPanGestureRecognizer) {
         
         if (!isFullscreen) {
             let yPlayerLocation = recognizer.location(in: self.view?.window).y
+            isExpanded = false
             
             switch recognizer.state {
             case .began:
@@ -246,19 +257,23 @@ extension YTFViewController {
     
     func adjustViewOnVerticalPan(yPlayerLocation: CGFloat, trueOffset: CGFloat, xOffset: CGFloat, recognizer: UIPanGestureRecognizer) {
         
-        if (Float(trueOffset) >= (restrictTrueOffset! + 60) ||
+        let percentage = (yPlayerLocation + 200) / self.initialFirstViewFrame!.size.height
+        
+        if xOffset < 0 {
+            return
+        } else if (Float(trueOffset) >= (restrictTrueOffset! + 60) ||
             Float(xOffset) >= (restrictOffset! + 60)) {
             
-            let trueOffset = initialFirstViewFrame!.size.height - 100
-            let xOffset = initialFirstViewFrame!.size.width - 160
+            let trueOffset = initialFirstViewFrame!.size.height - 140
+            let xOffset = initialFirstViewFrame!.size.width - 200
             
             //Use this offset to adjust the position of your view accordingly
             viewMinimizedFrame?.origin.y = trueOffset
-            viewMinimizedFrame?.origin.x = xOffset - 6
+            viewMinimizedFrame?.origin.x = xOffset - 6 * percentage
             viewMinimizedFrame?.size.width = initialFirstViewFrame!.size.width
             
             playerViewMinimizedFrame!.size.width = self.view.bounds.size.width - xOffset
-            playerViewMinimizedFrame!.size.height = 200 - xOffset * 0.5
+            playerViewMinimizedFrame!.size.height = playerViewMinimizedFrame!.size.width * 9.0 / 16.0
             
             UIView.animate(withDuration: 0.05, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.playerView.frame = self.playerViewMinimizedFrame!
@@ -266,17 +281,31 @@ extension YTFViewController {
                 self.tableViewContainer.alpha = 0.0
                 }, completion: { finished in
                     self.isMinimized = true
+                    self.isExpanded = false
             })
             recognizer.setTranslation(CGPoint(x: 0, y: 0), in: recognizer.view)
             
         } else {
+
+            if trueOffset < 20.0 {
+                if !shouldHideStatusBar {
+                    playerDelegate?.playerStateChanged(to: .expanded)
+                }
+                shouldHideStatusBar = true
+            } else {
+                if shouldHideStatusBar {
+                    playerDelegate?.playerStateChanged(to: .minimized)
+                }
+                shouldHideStatusBar = false
+            }
+            
             //Use this offset to adjust the position of your view accordingly
             viewMinimizedFrame?.origin.y = trueOffset
-            viewMinimizedFrame?.origin.x = xOffset - 6
+            viewMinimizedFrame?.origin.x = xOffset - 6 * percentage
             viewMinimizedFrame?.size.width = initialFirstViewFrame!.size.width
             
             playerViewMinimizedFrame!.size.width = self.view.bounds.size.width - xOffset
-            playerViewMinimizedFrame!.size.height = 200 - xOffset * 0.5
+            playerViewMinimizedFrame!.size.height = playerViewMinimizedFrame!.size.width * 9.0 / 16.0
             
             let restrictY = initialFirstViewFrame!.size.height - playerView!.frame.size.height - 10
             
@@ -285,7 +314,6 @@ extension YTFViewController {
                     self.playerView.frame = self.playerViewMinimizedFrame!
                     self.view.frame = self.viewMinimizedFrame!
                     
-                    let percentage = (yPlayerLocation + 200) / self.initialFirstViewFrame!.size.height
                     self.tableViewContainer.alpha = 1.0 - percentage
                     self.transparentView!.alpha = 1.0 - percentage
                     
@@ -365,8 +393,8 @@ extension YTFViewController {
         tableViewContainer.backgroundColor = UIColor.white
         minimizeButton.isHidden = true
         hidePlayerControls(dontAnimate: true)
-        let trueOffset = initialFirstViewFrame!.size.height - 100
-        let xOffset = initialFirstViewFrame!.size.width - 160
+        let trueOffset = initialFirstViewFrame!.size.height - 140
+        let xOffset = initialFirstViewFrame!.size.width - 200
         
         viewMinimizedFrame!.origin.y = trueOffset + 2
         viewMinimizedFrame!.origin.x = xOffset - 6
@@ -374,6 +402,8 @@ extension YTFViewController {
         
         playerViewMinimizedFrame!.size.width = self.view.bounds.size.width - xOffset
         playerViewMinimizedFrame!.size.height = playerViewMinimizedFrame!.size.width / (16/9)
+        shouldHideStatusBar = false
+        playerDelegate?.playerStateChanged(to: .minimized)
         
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
             self.playerView.frame = self.playerViewMinimizedFrame!
@@ -386,6 +416,8 @@ extension YTFViewController {
             self.transparentView?.alpha = 0.0
             }, completion: { finished in
                 self.isMinimized = true
+                self.isExpanded = false
+                
                 if let playerGesture = self.playerTapGesture {
                     self.playerView.removeGestureRecognizer(playerGesture)
                 }
@@ -401,13 +433,16 @@ extension YTFViewController {
         
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
             self.playerView.frame = self.playerViewFrame!
+            self.videoView.frame = self.playerView.frame
             self.view.frame = self.initialFirstViewFrame!
             self.playerView.alpha = 1.0
             self.tableViewContainer.alpha = 1.0
             self.transparentView?.alpha = 1.0
             }, completion: { finished in
                 self.isMinimized = false
+                self.isExpanded = true
                 self.minimizeButton.isHidden = false
+                self.playerDelegate?.playerStateChanged(to: .expanded)
                 if let playerGesture = self.playerTapGesture {
                     self.playerView.removeGestureRecognizer(playerGesture)
                     self.playerTapGesture = nil
@@ -416,6 +451,8 @@ extension YTFViewController {
                 self.playerView.addGestureRecognizer(self.playerTapGesture!)
                 self.tableViewContainer.backgroundColor = UIColor.black
                 self.showPlayerControls()
+                self.shouldHideStatusBar = true
+                self.playerDelegate?.playerStateChanged(to: .expanded)
         })
     }
     

@@ -15,13 +15,12 @@ A Swift-based video player inspired by YouTube. Based on [SwiftYouTubeFloatingPl
 			<img src="Screenshots/minimized.jpg" width="220"/>
 		</th>
 	</tr>
+</table>
+<table>
 	<tr>
-		<br>
-	</tr>
-	<tr>
-		<th>
-		<img src="Screenshots/fullscreen.jpg" width="4400"/>
-		</th>
+		<td>
+		<img src="Screenshots/fullscreen.jpg" width="470"/>
+		</td>
 	</tr>
 </table>
 

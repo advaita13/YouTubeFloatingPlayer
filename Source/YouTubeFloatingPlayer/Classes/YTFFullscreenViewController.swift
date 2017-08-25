@@ -206,7 +206,7 @@ extension YTFFullscreenViewController {
     }
     
     func timeFormatted(totalSeconds: Int) -> String {
-        1
+        
         let seconds: Int = totalSeconds % 60
         let minutes: Int = (totalSeconds / 60) % 60
         return String(format: "%02d:%02d", minutes, seconds)

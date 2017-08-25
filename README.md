@@ -17,7 +17,7 @@ Currently YTFPlayer is only supported on applications supporting only portrait o
 
 ```swift
 func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
-    return UIInterfaceOrientationMask.Portrait
+    return UIInterfaceOrientationMask.portrait
 }
 ```
 

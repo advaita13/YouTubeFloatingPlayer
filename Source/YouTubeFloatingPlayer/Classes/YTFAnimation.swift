@@ -237,19 +237,23 @@ extension YTFViewController {
     
     func adjustViewOnVerticalPan(yPlayerLocation: CGFloat, trueOffset: CGFloat, xOffset: CGFloat, recognizer: UIPanGestureRecognizer) {
         
-        if (Float(trueOffset) >= (restrictTrueOffset! + 60) ||
+        let percentage = (yPlayerLocation + 200) / self.initialFirstViewFrame!.size.height
+        
+        if xOffset < 0 {
+            return
+        } else if (Float(trueOffset) >= (restrictTrueOffset! + 60) ||
             Float(xOffset) >= (restrictOffset! + 60)) {
             
-            let trueOffset = initialFirstViewFrame!.size.height - 100
-            let xOffset = initialFirstViewFrame!.size.width - 160
+            let trueOffset = initialFirstViewFrame!.size.height - 140
+            let xOffset = initialFirstViewFrame!.size.width - 200
             
             //Use this offset to adjust the position of your view accordingly
             viewMinimizedFrame?.origin.y = trueOffset
-            viewMinimizedFrame?.origin.x = xOffset - 6
+            viewMinimizedFrame?.origin.x = xOffset - 6 * percentage
             viewMinimizedFrame?.size.width = initialFirstViewFrame!.size.width
             
             playerViewMinimizedFrame!.size.width = self.view.bounds.size.width - xOffset
-            playerViewMinimizedFrame!.size.height = 200 - xOffset * 0.5
+            playerViewMinimizedFrame!.size.height = playerViewMinimizedFrame!.size.width * 9.0 / 16.0
             
             UIView.animate(withDuration: 0.05, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.playerView.frame = self.playerViewMinimizedFrame!
@@ -262,7 +266,7 @@ extension YTFViewController {
             recognizer.setTranslation(CGPoint(x: 0, y: 0), in: recognizer.view)
             
         } else {
-            
+
             if trueOffset < 20.0 {
                 if !shouldHideStatusBar {
                     playerDelegate?.playerStateChanged(to: .expanded)
@@ -277,11 +281,11 @@ extension YTFViewController {
             
             //Use this offset to adjust the position of your view accordingly
             viewMinimizedFrame?.origin.y = trueOffset
-            viewMinimizedFrame?.origin.x = xOffset - 6
+            viewMinimizedFrame?.origin.x = xOffset - 6 * percentage
             viewMinimizedFrame?.size.width = initialFirstViewFrame!.size.width
             
             playerViewMinimizedFrame!.size.width = self.view.bounds.size.width - xOffset
-            playerViewMinimizedFrame!.size.height = 200 - xOffset * 0.5
+            playerViewMinimizedFrame!.size.height = playerViewMinimizedFrame!.size.width * 9.0 / 16.0
             
             let restrictY = initialFirstViewFrame!.size.height - playerView!.frame.size.height - 10
             
@@ -290,7 +294,6 @@ extension YTFViewController {
                     self.playerView.frame = self.playerViewMinimizedFrame!
                     self.view.frame = self.viewMinimizedFrame!
                     
-                    let percentage = (yPlayerLocation + 200) / self.initialFirstViewFrame!.size.height
                     self.tableViewContainer.alpha = 1.0 - percentage
                     self.transparentView!.alpha = 1.0 - percentage
                     
@@ -370,8 +373,8 @@ extension YTFViewController {
         tableViewContainer.backgroundColor = UIColor.white
         minimizeButton.isHidden = true
         hidePlayerControls(dontAnimate: true)
-        let trueOffset = initialFirstViewFrame!.size.height - 100
-        let xOffset = initialFirstViewFrame!.size.width - 160
+        let trueOffset = initialFirstViewFrame!.size.height - 140
+        let xOffset = initialFirstViewFrame!.size.width - 200
         
         viewMinimizedFrame!.origin.y = trueOffset + 2
         viewMinimizedFrame!.origin.x = xOffset - 6
@@ -379,6 +382,7 @@ extension YTFViewController {
         
         playerViewMinimizedFrame!.size.width = self.view.bounds.size.width - xOffset
         playerViewMinimizedFrame!.size.height = playerViewMinimizedFrame!.size.width / (16/9)
+        shouldHideStatusBar = false
         playerDelegate?.playerStateChanged(to: .minimized)
         
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
@@ -409,6 +413,7 @@ extension YTFViewController {
         
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
             self.playerView.frame = self.playerViewFrame!
+            self.videoView.frame = self.playerView.frame
             self.view.frame = self.initialFirstViewFrame!
             self.playerView.alpha = 1.0
             self.tableViewContainer.alpha = 1.0
@@ -426,6 +431,7 @@ extension YTFViewController {
                 self.playerView.addGestureRecognizer(self.playerTapGesture!)
                 self.tableViewContainer.backgroundColor = UIColor.black
                 self.showPlayerControls()
+                self.shouldHideStatusBar = true
                 self.playerDelegate?.playerStateChanged(to: .expanded)
         })
     }

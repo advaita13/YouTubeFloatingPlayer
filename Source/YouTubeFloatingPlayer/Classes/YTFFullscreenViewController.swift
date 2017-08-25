@@ -74,7 +74,12 @@ class YTFFullscreenViewController: UIViewController {
         setupGestureRecognizer()
         setupImageAssets()
         showPlayerControls()
-        setupSlider(with: (ytPlayerView?.duration())!)
+        
+        guard let duration = ytPlayerView?.duration() else {
+            return
+        }
+        setupSlider(with: duration)
+        entireTimeLabel.text = timeFormatted(totalSeconds: Int(duration))
     }
     
     func setupGestureRecognizer() {

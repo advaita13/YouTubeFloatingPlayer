@@ -83,7 +83,6 @@ public struct YTFPlayer {
             dragViewController!.onView = viewController.view
             
             UIApplication.shared.keyWindow?.addSubview(dragViewController!.view)
-            
             UIView.animate(withDuration: 0.5, animations: {
                 dragViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                 dragViewController!.view.alpha = 1
@@ -92,6 +91,7 @@ public struct YTFPlayer {
                 
                 dragViewController!.isOpen = true
             }, completion: { completed in
+                dragViewController!.transparentView?.alpha = 1.0
                 self.delegate?.playerStateChanged(to: .expanded)
             })
         }

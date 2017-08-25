@@ -229,17 +229,17 @@ class YTFViewController: UIViewController {
         self.viewMinimizedFrame = self.tableViewContainer.frame
         self.playerControlsFrame = self.playerControlsView.frame
         
-        playerView.translatesAutoresizingMaskIntoConstraints = true
-        tableViewContainer.translatesAutoresizingMaskIntoConstraints = true
-        playerControlsView.translatesAutoresizingMaskIntoConstraints = true
-        backPlayerControlsView.translatesAutoresizingMaskIntoConstraints = true
-        tableViewContainer.frame = self.initialFirstViewFrame!
+        self.playerView.translatesAutoresizingMaskIntoConstraints = true
+        self.tableViewContainer.translatesAutoresizingMaskIntoConstraints = true
+        self.playerControlsView.translatesAutoresizingMaskIntoConstraints = true
+        self.backPlayerControlsView.translatesAutoresizingMaskIntoConstraints = true
+        self.tableViewContainer.frame = self.initialFirstViewFrame!
         self.playerControlsView.frame = self.playerControlsFrame!
         
-        transparentView = UIView.init(frame: initialFirstViewFrame!)
-        transparentView?.backgroundColor = UIColor.black
-        transparentView?.alpha = 0.0
-        onView?.addSubview(transparentView!)
+        self.transparentView = UIView.init(frame: initialFirstViewFrame!)
+        self.transparentView?.backgroundColor = UIColor.black
+        self.transparentView?.alpha = 0.0
+        self.onView?.addSubview(transparentView!)
         
         self.restrictOffset = Float(self.initialFirstViewFrame!.size.width) - 200
         self.restrictTrueOffset = Float(self.initialFirstViewFrame!.size.height) - 180

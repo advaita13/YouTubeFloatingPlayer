@@ -6,6 +6,25 @@ A Swift-based video player inspired by YouTube. Based on [SwiftYouTubeFloatingPl
 [![License](https://img.shields.io/cocoapods/l/YouTubeFloatingPlayer.svg?style=flat)](http://cocoapods.org/pods/YouTubeFloatingPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/YouTubeFloatingPlayer.svg?style=flat)](http://cocoapods.org/pods/YouTubeFloatingPlayer)
 
+<table>
+	<tr>
+		<th>
+			<img src="Screenshots/expanded.jpg" width="220"/>
+		</th>
+		<th>
+			<img src="Screenshots/minimized.jpg" width="220"/>
+		</th>
+	</tr>
+	<tr>
+		<br>
+	</tr>
+	<tr>
+		<th>
+		<img src="Screenshots/fullscreen.jpg" width="4400"/>
+		</th>
+	</tr>
+</table>
+
 ## Features
 
 - Interactive, drag to minimize, swipe to dismiss

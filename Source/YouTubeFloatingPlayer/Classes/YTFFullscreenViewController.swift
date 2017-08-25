@@ -11,40 +11,37 @@ import youtube_ios_player_helper
 
 class YTFFullscreenViewController: UIViewController {
     
-    @IBOutlet weak var play: UIButton!
-    @IBOutlet weak var fullscreen: UIButton!
-    @IBOutlet weak var playerView: UIView!
-    @IBOutlet weak var videoView: UIView!
-    @IBOutlet weak var playerControlsView: UIView!
-    @IBOutlet weak var backPlayerControlsView: UIView!
-    @IBOutlet weak var slider: CustomSlider!
-    @IBOutlet weak var progress: CustomProgress!
-    @IBOutlet weak var entireTimeLabel: UILabel!
-    @IBOutlet weak var currentTimeLabel: UILabel!
+    @IBOutlet weak var play:                    UIButton!
+    @IBOutlet weak var fullscreen:              UIButton!
+    @IBOutlet weak var playerView:              UIView!
+    @IBOutlet weak var videoView:               UIView!
+    @IBOutlet weak var playerControlsView:      UIView!
+    @IBOutlet weak var backPlayerControlsView:  UIView!
+    @IBOutlet weak var slider:                  CustomSlider!
+    @IBOutlet weak var progress:                CustomProgress!
+    @IBOutlet weak var entireTimeLabel:         UILabel!
+    @IBOutlet weak var currentTimeLabel:        UILabel!
     
-    var playerTapGesture: UITapGestureRecognizer?
+    var playerTapGesture:                       UITapGestureRecognizer?
+    var ytPlayerView:                           YTPlayerView?
+    var webView:                                UIWebView?
+    var ytfViewController:                      YTFViewController?
+    var orientation =                           UIInterfaceOrientation.landscapeRight
     
-    var ytPlayerView: YTPlayerView?
-    var webView: UIWebView?
+    var isOpen =                                false
+    var isPlaying =                             false
+    var isFullscreen =                          false
+    var sliderValueChanged =                    false
+    var isMinimized =                           false
+    var shouldHideStatusBar =                   true
     
-    var isOpen: Bool = false
-    var isPlaying: Bool = false
-    var isFullscreen: Bool = false
-    var sliderValueChanged: Bool = false
-    var isMinimized: Bool = false
+    var hideTimer:                              Timer?
     
-    var hideTimer: Timer?
-    
-    var playImage: UIImage?
-    var pauseImage: UIImage?
-    var fullscreenImage: UIImage?
-    var unfullscreenImage: UIImage?
-    var minimizeImage: UIImage?
-    
-    var ytfViewController: YTFViewController?
-    
-    var orientation = UIInterfaceOrientation.landscapeRight
-    var shouldHideStatusBar = true
+    var playImage:                              UIImage?
+    var pauseImage:                             UIImage?
+    var fullscreenImage:                        UIImage?
+    var unfullscreenImage:                      UIImage?
+    var minimizeImage:                          UIImage?
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         switch orientation {
@@ -58,7 +55,6 @@ class YTFFullscreenViewController: UIViewController {
     }
     
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        
         return orientation == .landscapeRight ? .landscapeLeft : .landscapeRight
     }
     
@@ -85,7 +81,10 @@ class YTFFullscreenViewController: UIViewController {
     func setupGestureRecognizer() {
         self.webView?.isUserInteractionEnabled = false
         self.playerTapGesture = UITapGestureRecognizer(target: self, action: #selector(showPlayerControls))
-        self.playerView.addGestureRecognizer(self.playerTapGesture!)
+        
+        if let gestureRecognizer = playerTapGesture {
+            self.playerView.addGestureRecognizer(gestureRecognizer)
+        }
     }
     
     func setupImageAssets() {
@@ -106,7 +105,11 @@ class YTFFullscreenViewController: UIViewController {
         
         hideTimer?.invalidate()
         hideTimer = nil
-        hideTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(hidePlayerControls(dontAnimate:)), userInfo: 1.0, repeats: false)
+        hideTimer = Timer.scheduledTimer(timeInterval: 4.0,
+                                         target: self,
+                                         selector: #selector(hidePlayerControls(dontAnimate:)),
+                                         userInfo: 1.0,
+                                         repeats: false)
     }
     
     func resetHideTimer() {
@@ -121,11 +124,17 @@ class YTFFullscreenViewController: UIViewController {
     func showPlayerControls() {
         
         if (!isMinimized) {
-            UIView.animate(withDuration: 0.6, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            
+            let animatePlayerControls = {
                 self.backPlayerControlsView.alpha = 0.55
                 self.playerControlsView.alpha = 1.0
-                
-            }, completion: nil)
+            }
+            
+            UIView.animate(withDuration: 0.6,
+                           delay: 0,
+                           options: UIViewAnimationOptions.curveEaseOut,
+                           animations: animatePlayerControls,
+                           completion: nil)
             setHideTimer()
         }
     }
@@ -137,11 +146,17 @@ class YTFFullscreenViewController: UIViewController {
             self.playerControlsView.alpha = 0.0
         } else {
             if (isPlaying) {
-                UIView.animate(withDuration: 0.6, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+                
+                let animatePlayerControls = {
                     self.backPlayerControlsView.alpha = 0.0
                     self.playerControlsView.alpha = 0.0
-                    
-                }, completion: nil)
+                }
+                
+                UIView.animate(withDuration: 0.6,
+                               delay: 0,
+                               options: UIViewAnimationOptions.curveEaseIn,
+                               animations: animatePlayerControls,
+                               completion: nil)
             }
         }
     }
@@ -158,9 +173,9 @@ extension YTFFullscreenViewController {
     
     @IBAction func playTouched(sender: AnyObject) {
         
-        ytPlayerView?.playerState()
+        let playerState = ytPlayerView?.playerState()
         
-        if (ytPlayerView?.playerState() == YTPlayerState.playing) {
+        if (playerState == .playing) {
             ytPlayerView?.pauseVideo()
         } else {
             ytPlayerView?.playVideo()
@@ -170,7 +185,7 @@ extension YTFFullscreenViewController {
     @IBAction func fullScreenTouched(sender: AnyObject) {
         
         shouldHideStatusBar = false
-        self.setNeedsStatusBarAppearanceUpdate()
+        setNeedsStatusBarAppearanceUpdate()
         
         ytfViewController?.setPlayerToNormalScreen()
     }
@@ -191,6 +206,7 @@ extension YTFFullscreenViewController {
     }
     
     func timeFormatted(totalSeconds: Int) -> String {
+        1
         let seconds: Int = totalSeconds % 60
         let minutes: Int = (totalSeconds / 60) % 60
         return String(format: "%02d:%02d", minutes, seconds)

@@ -76,19 +76,28 @@ extension YTFViewController {
         self.hidePlayerControls(dontAnimate: true)
         self.videoView.isHidden = true
         
-        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
+        let playerAnimation = {
+            guard let initialFrame = self.initialFirstViewFrame else {
+                return
+            }
+            
             self.minimizeButton.isHidden = true
-            
             self.playerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
-            
-            self.playerView.frame = CGRect(x: self.initialFirstViewFrame!.origin.x, y: self.initialFirstViewFrame!.origin.x, width: self.initialFirstViewFrame!.size.width, height: self.initialFirstViewFrame!.size.height)
-            
-            }, completion: { finished in
-                self.isFullscreen = true
-                self.videoView.isHidden = false
-                self.initFullscreenView()
-                self.playerDelegate?.playerStateChanged(to: .fullscreen)
-        })
+            self.playerView.frame = initialFrame
+        }
+        
+        let playerCompletion: (Bool) -> () = { finished in
+            self.isFullscreen = true
+            self.videoView.isHidden = false
+            self.initFullscreenView()
+            self.playerDelegate?.playerStateChanged(to: .fullscreen)
+        }
+        
+        UIView.animate(withDuration: 0.25,
+                       delay: 0.0,
+                       options: .curveEaseInOut,
+                       animations: playerAnimation,
+                       completion: playerCompletion)
     }
     
     func setPlayerToNormalScreen() {
@@ -101,21 +110,32 @@ extension YTFViewController {
         videoView.addSubview(webView)
         videoView.delegate = self
         
-        ytfFullscreenViewController?.dismiss(animated: false, completion: {
+        let playerAnimation = {
+            guard let playerFrame = self.playerViewFrame else {
+                return
+            }
+            
+            self.playerView.transform = CGAffineTransform(rotationAngle: 0)
+            self.playerView.frame = playerFrame
+        }
+        
+        let playerCompletion: (Bool) -> () = { finished in
+            self.isFullscreen = false
+            self.fullscreen.setImage(self.fullscreenImage, for: UIControlState.normal)
+            self.playerDelegate?.playerStateChanged(to: .expanded)
+        }
+        
+        let fullScreenDismissCompletion = {
             self.ytfFullscreenViewController = nil
             
-            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
-                
-                self.playerView.transform = CGAffineTransform(rotationAngle: 0)
-                
-                self.playerView.frame = CGRect(x: self.playerViewFrame!.origin.x, y: self.playerViewFrame!.origin.y, width: self.playerViewFrame!.size.width, height: self.playerViewFrame!.size.height)
-                
-            }, completion: { finished in
-                self.isFullscreen = false
-                self.fullscreen.setImage(self.fullscreenImage, for: UIControlState.normal)
-                self.playerDelegate?.playerStateChanged(to: .expanded)
-            })
-        })
+            UIView.animate(withDuration: 0.25,
+                           delay: 0.0,
+                           options: .curveEaseInOut,
+                           animations: playerAnimation,
+                           completion: playerCompletion)
+        }
+        
+        ytfFullscreenViewController?.dismiss(animated: false, completion: fullScreenDismissCompletion)
     }
     
     func panAction(recognizer: UIPanGestureRecognizer) {

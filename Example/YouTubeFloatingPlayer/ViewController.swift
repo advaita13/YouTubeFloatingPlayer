@@ -28,10 +28,6 @@ class ViewController: UITableViewController {
         return shouldHideStatusBar
     }
     
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return .slide
-    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

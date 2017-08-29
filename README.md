@@ -39,6 +39,9 @@ func application(application: UIApplication, supportedInterfaceOrientationsForWi
 }
 ```
 
+### Known Issues
+- Button Icons do not appear, refer [Issue #16](https://github.com/advaita13/YouTubeFloatingPlayer/issues/16) for a fix.
+
 ## Dependencies
 
 - [YouTube Helper](https://github.com/youtube/youtube-ios-player-helper)

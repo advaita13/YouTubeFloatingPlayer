@@ -1,6 +1,6 @@
 {
   "name": "YouTubeFloatingPlayer",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "summary": "Youtube-styled Floating Player written in Swift",
   "description": "A floating video player, similar to the one used in the YouTube app, written in Swift 3. This player is interactive in nature: drag to minimize, swipe to dismiss. Furthermore, it supports TableView as well as any other UIView underneath the video player while the player is in normal mode.",
   "homepage": "https://github.com/advaita13/YouTubeFloatingPlayer",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/advaita13/YouTubeFloatingPlayer.git",
-    "tag": "1.0.4"
+    "tag": "2.0.0"
   },
   "platforms": {
     "ios": "9.0"

@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.1] - 2014-08-29
+### Bug Fixes
+- Player button icons now appear
+
 ## [2.0.0] - 2014-08-25
 ### Native Fullscreen
 - Proper fullscreen mode

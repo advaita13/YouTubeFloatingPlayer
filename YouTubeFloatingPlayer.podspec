@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YouTubeFloatingPlayer'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'Youtube-styled Floating Player written in Swift'
 
   s.description      = <<-DESC

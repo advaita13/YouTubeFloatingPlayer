@@ -16,6 +16,7 @@
 		478891A7E1804D7571B62DF9A4233513 /* YTFFullscreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064A27F1B244699FF35E7E22456D0BFC /* YTFFullscreenViewController.xib */; };
 		4A82486A4E29D95F1814F86C131F3774 /* Pods-YouTubeFloatingPlayer_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA88FE0467872DAC0C3C9E415638036 /* Pods-YouTubeFloatingPlayer_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BD560B76EC8E2061D1A4326CFF60F6E /* YTFPopupCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B266927D872B505B18C000A02AAB2FE /* YTFPopupCloseButton.swift */; };
+		515EEB401F551E0800908870 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B637C6F0A732E980685D7CEE7C170611 /* Media.xcassets */; };
 		520C90E94BE774FBE26F1D9CAC60A370 /* YTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A7F0FCE91DB9D4697FF97A17C6E2FF /* YTFAnimation.swift */; };
 		5B621FEA1053952D3D64BC219ABFB61C /* YTFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67AD8E3C66C3C72D61526182E97268 /* YTFViewController.swift */; };
 		5DB8D302FE629F7D6101313E6E91804B /* Pods-YouTubeFloatingPlayer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF4FC6357097E035FE5E096BA916ABF /* Pods-YouTubeFloatingPlayer_Example-dummy.m */; };
@@ -528,6 +529,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515EEB401F551E0800908870 /* Media.xcassets in Resources */,
 				76A502BB3939340A0E9FDDF2454F03A7 /* YouTubeFloatingPlayer.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
